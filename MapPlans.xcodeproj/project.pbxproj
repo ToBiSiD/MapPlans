@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2208947C63AACAB1096BB154 /* Pods_MapPlans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F633E367A66920B494A2A4F9 /* Pods_MapPlans.framework */; };
+		D228299D2A8233400099CA2A /* SelectedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */; };
+		D228299F2A8238690099CA2A /* BaseButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228299E2A8238690099CA2A /* BaseButtonLabel.swift */; };
+		D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */; };
+		D22E4C002A828C4400FFB0AD /* PlanStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */; };
+		D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C012A828FF800FFB0AD /* Dropdown.swift */; };
+		D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C032A82901600FFB0AD /* DropdownRow.swift */; };
+		D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */; };
 		D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */; };
 		D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E31B2A791C7B00688BE4 /* ContentView.swift */; };
 		D2E3E31E2A791C7C00688BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */; };
@@ -16,7 +23,6 @@
 		D2E3E32D2A791D7600688BE4 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E32C2A791D7600688BE4 /* MapKitView.swift */; };
 		D2E3E32F2A791E6000688BE4 /* MapStyleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */; };
 		D2E3E3312A791FFC00688BE4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */; };
-		D2E3E3332A79229800688BE4 /* ForEachCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3322A79229800688BE4 /* ForEachCustomOptionView.swift */; };
 		D2E3E3352A79291400688BE4 /* MapStylePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */; };
 		D2E3E3372A792B7D00688BE4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3362A792B7D00688BE4 /* LocationManager.swift */; };
 		D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3382A792B9B00688BE4 /* Plan.swift */; };
@@ -34,10 +40,6 @@
 		D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */; };
 		D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */; };
 		D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E35B2A7A8CA500688BE4 /* ViewExtensions.swift */; };
-		D2E3E35E2A7BC1E900688BE4 /* AnnotationCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E35D2A7BC1E900688BE4 /* AnnotationCalloutView.swift */; };
-		D2E3E3652A7BC42700688BE4 /* PlaceActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3642A7BC42700688BE4 /* PlaceActions.swift */; };
-		D2E3E3672A7E962800688BE4 /* DropdownListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3662A7E962800688BE4 /* DropdownListView.swift */; };
-		D2E3E3692A7E96D200688BE4 /* DropdownListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3682A7E96D200688BE4 /* DropdownListRow.swift */; };
 		D2E3E36B2A7EC9D600688BE4 /* PlanRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */; };
 		D2E3E36E2A7ED1E100688BE4 /* DropdownSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,13 @@
 /* Begin PBXFileReference section */
 		A58C5BE077610783FB672035 /* Pods-MapPlans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPlans.release.xcconfig"; path = "Target Support Files/Pods-MapPlans/Pods-MapPlans.release.xcconfig"; sourceTree = "<group>"; };
 		D028A3AE402641D19E3F3F1F /* Pods-MapPlans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPlans.debug.xcconfig"; path = "Target Support Files/Pods-MapPlans/Pods-MapPlans.debug.xcconfig"; sourceTree = "<group>"; };
+		D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAnnotationView.swift; sourceTree = "<group>"; };
+		D228299E2A8238690099CA2A /* BaseButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonLabel.swift; sourceTree = "<group>"; };
+		D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStateSwipeButtonView.swift; sourceTree = "<group>"; };
+		D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStateView.swift; sourceTree = "<group>"; };
+		D22E4C012A828FF800FFB0AD /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		D22E4C032A82901600FFB0AD /* DropdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownRow.swift; sourceTree = "<group>"; };
+		D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachCustomOptionView.swift; sourceTree = "<group>"; };
 		D2E3E3162A791C7B00688BE4 /* MapPlans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlansApp.swift; sourceTree = "<group>"; };
 		D2E3E31B2A791C7B00688BE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +63,6 @@
 		D2E3E32C2A791D7600688BE4 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 		D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleOption.swift; sourceTree = "<group>"; };
 		D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		D2E3E3322A79229800688BE4 /* ForEachCustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachCustomOptionView.swift; sourceTree = "<group>"; };
 		D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylePickerView.swift; sourceTree = "<group>"; };
 		D2E3E3362A792B7D00688BE4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D2E3E3382A792B9B00688BE4 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
@@ -72,10 +80,6 @@
 		D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSetupView.swift; sourceTree = "<group>"; };
 		D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldView.swift; sourceTree = "<group>"; };
 		D2E3E35B2A7A8CA500688BE4 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		D2E3E35D2A7BC1E900688BE4 /* AnnotationCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationCalloutView.swift; sourceTree = "<group>"; };
-		D2E3E3642A7BC42700688BE4 /* PlaceActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceActions.swift; sourceTree = "<group>"; };
-		D2E3E3662A7E962800688BE4 /* DropdownListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownListView.swift; sourceTree = "<group>"; };
-		D2E3E3682A7E96D200688BE4 /* DropdownListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownListRow.swift; sourceTree = "<group>"; };
 		D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowViewModel.swift; sourceTree = "<group>"; };
 		D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectorView.swift; sourceTree = "<group>"; };
 		F633E367A66920B494A2A4F9 /* Pods_MapPlans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPlans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +162,6 @@
 		D2E3E3282A791CF800688BE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E3642A7BC42700688BE4 /* PlaceActions.swift */,
 				D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */,
 				D2E3E3622A7BC37600688BE4 /* Plan */,
 				D2E3E3632A7BC38100688BE4 /* MapPlace */,
@@ -201,7 +204,7 @@
 				D2E3E32A2A791D1800688BE4 /* MapView.swift */,
 				D2E3E32C2A791D7600688BE4 /* MapKitView.swift */,
 				D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */,
-				D2E3E35D2A7BC1E900688BE4 /* AnnotationCalloutView.swift */,
+				D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */,
 			);
 			path = MapViews;
 			sourceTree = "<group>";
@@ -209,10 +212,10 @@
 		D2E3E3602A7BC22000688BE4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E3322A79229800688BE4 /* ForEachCustomOptionView.swift */,
 				D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */,
-				D2E3E3662A7E962800688BE4 /* DropdownListView.swift */,
-				D2E3E3682A7E96D200688BE4 /* DropdownListRow.swift */,
+				D228299E2A8238690099CA2A /* BaseButtonLabel.swift */,
+				D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */,
+				D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */,
 				D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */,
 				D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */,
+				D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */,
 			);
 			path = PlanViews;
 			sourceTree = "<group>";
@@ -251,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */,
+				D22E4C012A828FF800FFB0AD /* Dropdown.swift */,
+				D22E4C032A82901600FFB0AD /* DropdownRow.swift */,
 			);
 			path = DropdownSelector;
 			sourceTree = "<group>";
@@ -401,33 +407,35 @@
 				D2E3E34A2A79556E00688BE4 /* PlaceAnnotation.swift in Sources */,
 				D2E3E32D2A791D7600688BE4 /* MapKitView.swift in Sources */,
 				D2E3E32F2A791E6000688BE4 /* MapStyleOption.swift in Sources */,
-				D2E3E35E2A7BC1E900688BE4 /* AnnotationCalloutView.swift in Sources */,
 				D2E3E3532A7A80F800688BE4 /* PlacePlansViewModel.swift in Sources */,
+				D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */,
 				D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */,
 				D2E3E3402A792F4E00688BE4 /* PlanState.swift in Sources */,
+				D228299F2A8238690099CA2A /* BaseButtonLabel.swift in Sources */,
 				D2E3E3352A79291400688BE4 /* MapStylePickerView.swift in Sources */,
+				D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */,
 				D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */,
-				D2E3E3692A7E96D200688BE4 /* DropdownListRow.swift in Sources */,
 				D2E3E32B2A791D1800688BE4 /* MapView.swift in Sources */,
 				D2E3E3462A794A9200688BE4 /* PlacesService.swift in Sources */,
 				D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */,
 				D2E3E3442A79498800688BE4 /* Constants.swift in Sources */,
+				D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */,
 				D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */,
 				D2E3E34F2A7A590900688BE4 /* PlaceData.swift in Sources */,
 				D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */,
 				D2E3E3422A792FD800688BE4 /* RealmService.swift in Sources */,
-				D2E3E3332A79229800688BE4 /* ForEachCustomOptionView.swift in Sources */,
-				D2E3E3652A7BC42700688BE4 /* PlaceActions.swift in Sources */,
 				D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */,
+				D22E4C002A828C4400FFB0AD /* PlanStateView.swift in Sources */,
 				D2E3E3312A791FFC00688BE4 /* MapViewModel.swift in Sources */,
-				D2E3E3672A7E962800688BE4 /* DropdownListView.swift in Sources */,
 				D2E3E36B2A7EC9D600688BE4 /* PlanRowViewModel.swift in Sources */,
 				D2E3E3372A792B7D00688BE4 /* LocationManager.swift in Sources */,
 				D2E3E3512A7A80DD00688BE4 /* PlacePlansView.swift in Sources */,
 				D2E3E36E2A7ED1E100688BE4 /* DropdownSelectorView.swift in Sources */,
 				D2E3E3552A7A86E400688BE4 /* PlanRowView.swift in Sources */,
+				D228299D2A8233400099CA2A /* SelectedAnnotationView.swift in Sources */,
 				D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */,
 				D2E3E3482A7950E600688BE4 /* Root.swift in Sources */,
+				D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +576,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,6 +610,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

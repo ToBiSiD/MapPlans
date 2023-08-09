@@ -9,12 +9,46 @@ import SwiftUI
 
 struct PlanRowView: View {
     @ObservedObject var viewModel: PlanRowViewModel
+    @State var planState: PlanState
+    let placeId: String
     
-    init(plan: Plan) {
-        viewModel = PlanRowViewModel(plan: plan)
+    init(plan: Plan, placeId: String) {
+        self.viewModel = PlanRowViewModel(plan: plan)
+        self.placeId = placeId
+        self.planState = plan.planState
     }
     
     var body: some View {
+        mainContent
+            .swipeActions(allowsFullSwipe: false, content: {
+                Button(role: .destructive) {
+                    MapViewModel.shared.removePlan(planId: viewModel.plan.id)
+                } label: {
+                    Label("Remove", systemImage: "trash.fill")
+                }
+                
+                PlanStateSwipeButtonView(planState: $planState, newState: .toDo)
+                    .disabled(planState == .toDo)
+                
+                PlanStateSwipeButtonView(planState: $planState, newState: .inProgress)
+                    .disabled(planState == .inProgress)
+                
+                PlanStateSwipeButtonView(planState: $planState, newState: .done)
+                    .disabled(planState == .done)
+            })
+            .overlay {
+                NavigationLink {
+                    PlanSetupView(placeId: placeId, plan: viewModel.plan)
+                } label: {
+
+                }
+            }
+            .onChange(of: planState) { newValue in
+                viewModel.updateState(state: planState)
+            }
+    }
+    
+    var mainContent: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(viewModel.plan.title)
@@ -25,22 +59,13 @@ struct PlanRowView: View {
             
             Spacer()
             
-            HStack(alignment: .center) {
-                Spacer()
-                
-               /* if let options = PlanState.allCases as? [PlanState] {
-                    
-                    DropdownSelectorView(placeholder: viewModel.planState, options: options) { option in
-                        viewModel.planState = option
-                    }
-                }*/
-            }
+            PlanStateView(option: viewModel.plan.planState, isReverse: true)
         }
     }
 }
 
 struct PlanRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanRowView(plan: Plan.MockPlan)
+        PlanRowView(plan: Plan.MockPlan, placeId: "")
     }
 }

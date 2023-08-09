@@ -35,7 +35,7 @@ struct ImageTextFieldView: View {
             
             if isSecurityField {
                 SecureField("", text: $textValue)
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(.white)//Color("TextColor"))
                     .placeholder(when: textValue.isEmpty, placeholder: {
                         Text(placeholderText)//.foregroundColor(Color("TextTintColor"))
                     })
@@ -48,7 +48,7 @@ struct ImageTextFieldView: View {
                     .font(.subheadline)
             } else {
                 TextField("", text: $textValue)
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(.white)//Color("TextColor"))
                     .placeholder(when: textValue.isEmpty, placeholder: {
                         Text(placeholderText)//.foregroundColor(Color("TextTintColor"))
                     })

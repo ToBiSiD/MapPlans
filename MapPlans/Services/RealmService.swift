@@ -13,17 +13,14 @@ class RealmService {
     private(set) var realm: Realm?
     
     init() {
-        print("Realm open")
         openRealm()
     }
     
     func openRealm() {
         do {
             let config = Realm.Configuration(schemaVersion: 1)
-            
             Realm.Configuration.defaultConfiguration = config
             realm = try Realm()
-            print(config.fileURL!)
         } catch {
             print(error.localizedDescription)
         }
@@ -31,12 +28,10 @@ class RealmService {
     
     
     func fetchData<T: Object>() -> Results<T>? {
-        print("Realm fetch")
         return realm?.objects(T.self)
     }
     
     func addData<T: Object>(data: T) {
-        print("Realm add")
         if let realm = realm {
             do {
                 try realm.write{
@@ -49,7 +44,6 @@ class RealmService {
     }
     
     func updateData(completion: @escaping () -> Void ) {
-        print("Realm update")
         if let realm = realm {
             do {
                 try realm.write{
@@ -62,7 +56,6 @@ class RealmService {
     }
     
     func removeData(id: ObjectId, completion: @escaping () -> Void ) {
-        print("Realm remove")
         if let realm = realm {
             do {
                 let plan = realm.objects(Plan.self).filter(NSPredicate(format: "id == %@", id))

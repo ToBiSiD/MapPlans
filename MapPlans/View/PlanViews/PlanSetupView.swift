@@ -43,14 +43,20 @@ struct PlanSetupView: View {
                 .datePickerStyle(.compact)
                 .padding()
             
-            if let planStates = PlanState.allCases as? [PlanState] {
-                Picker("Status:", selection: $planState) {
-                    ForEachCustomOptionView(data: planStates) { option in
-                        Text(option.optionTitle)
+            HStack {
+                Text("State")
+                    .font(.subheadline)
+                
+                Spacer()
+                
+                if let options = PlanState.allCases as? [PlanState] {
+                    
+                    DropdownSelectorView(defaultOption: viewModel.plan?.planState ?? .toDo, options: options) { option in
+                        planState = option
                     }
                 }
-                .pickerStyle(.segmented)
             }
+            .padding(.horizontal)
             
             Spacer()
             

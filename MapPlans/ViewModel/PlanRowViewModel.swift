@@ -8,26 +8,22 @@
 import Foundation
 
 class PlanRowViewModel: ObservableObject {
-    let plan: Plan
-    @Published var planState: PlanState
-    {
-        didSet {
-            updateState(state: planState)
-        }
-    }
+    @Published var plan: Plan
     
     private let realmService = RealmService()
     
     init(plan: Plan){
         self.plan = plan
-        planState = plan.planState
     }
     
     func updateState(state: PlanState) {
-        realmService.updateData {
-            let prevValue = self.plan.planState
-            if self.planState == .done || prevValue == .done {
-                MapViewModel.shared.updatePlanState(planId: self.plan.id)
+        let prevValue = self.plan.planState
+        if prevValue != state {
+            realmService.updateData {
+                self.plan.planState = state
+                if self.plan.planState == .done || prevValue == .done {
+                    MapViewModel.shared.updatePlanState(planId: self.plan.id)
+                }
             }
         }
     }

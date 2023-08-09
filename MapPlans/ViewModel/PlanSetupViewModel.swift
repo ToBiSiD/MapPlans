@@ -33,7 +33,7 @@ class PlanSetupViewModel: ObservableObject {
                     plan.finishDate = finishDate
                 }
                 
-                if let description = planDescription {
+                if let description = planDescription, !description.isEmpty {
                     plan.planDescription = description
                 }
                 

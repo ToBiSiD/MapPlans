@@ -7,8 +7,10 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
 class PlacesService {
+    static let shared = PlacesService()
     private var cashedPosition : CLLocationCoordinate2D?
     
     func fetchPlacesFromGoogleAPI(with center: CLLocationCoordinate2D, existingAnnotations: [PlaceAnnotation], existingPlans: [String : [Plan]], completion: @escaping ([PlaceData]) -> Void) {
@@ -19,7 +21,7 @@ class PlacesService {
         
         cashedPosition = center
         let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(Constants.radius)&key=\(Constants.googlePlacesApiKey)"
-        
+
         if let url = URL(string: urlString) {
             let sesion = URLSession(configuration: .default)
             let task = sesion.dataTask(with: url) { (data, response, error) in
@@ -59,7 +61,12 @@ class PlacesService {
             }
 
             let plans = existingPlans[place.placeId] ?? []
-            let placeData = PlaceData(placeId: place.placeId, name: place.name, lat: place.geometry.location.lat, lng: place.geometry.location.lng, plans: plans)
+            var imageUrl: String? = nil
+            if let firstImage = place.photos?.first{
+                imageUrl = firstImage.photoReference
+            }
+            
+            let placeData = PlaceData(placeId: place.placeId, name: place.name, lat: place.geometry.location.lat, lng: place.geometry.location.lng, imageUrl: imageUrl, plans: plans)
             placesData.append(placeData)
         }
         

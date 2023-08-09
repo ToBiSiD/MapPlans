@@ -13,10 +13,8 @@ class MapViewModel : ObservableObject {
     @Published var mapStyle: MapStyleOption = .standard
     @Published var annotations: [PlaceAnnotation] = []
     
-    @Published var selectedPlaceId: String = ""
-    @Published var selectedPlaceTitle: String = ""
-    @Published var openCreateView: Bool = false
-    @Published var openPlacePlansView: Bool = false
+    @Published var selectedAnnotation: PlaceAnnotation?
+    @Published var targetPlace: CLLocationCoordinate2D?
     
     private var placePlans: [String : [Plan]] = [:]
     private let realmService: RealmService = RealmService()
@@ -51,10 +49,8 @@ class MapViewModel : ObservableObject {
     func updatePlanState(planId: ObjectId) {
         let existingPlaceSearchResult = tryGetExistingPlaceInfo(planId: planId)
         if let placeId = existingPlaceSearchResult.placeId, let plans = existingPlaceSearchResult.placePlans {
-            for annotation in annotations {
-                if annotation.placeId == placeId {
-                    annotation.completedPlans = plans.filter { $0.planState == .done }.count
-                }
+            for annotation in annotations.filter({ $0.placeId == placeId }) {
+                annotation.completedPlans = plans.filter { $0.planState == .done }.count
             }
         }
     }
@@ -63,11 +59,9 @@ class MapViewModel : ObservableObject {
         let existingPlaceSearchResult = tryGetExistingPlaceInfo(planId: planId)
         if let placeId = existingPlaceSearchResult.placeId, var plans = existingPlaceSearchResult.placePlans {
             plans.removeAll { $0.id == planId }
-            for annotation in annotations {
-                if annotation.placeId == placeId {
-                    annotation.plans = plans.count
-                    annotation.completedPlans = plans.filter { $0.planState == .done }.count
-                }
+            for annotation in annotations.filter({ $0.placeId == placeId }) {
+                annotation.plans = plans.count
+                annotation.completedPlans = plans.filter { $0.planState == .done }.count
             }
         }
     }
@@ -81,18 +75,18 @@ class MapViewModel : ObservableObject {
             let combine = self.placePlans.merging(convertedDictionary) { $1 }
             self.placePlans = combine
             for place in additionalPlaces {
-                self.createAnnotation(placeId: place.placeId, placeName: place.name, coordinate: CLLocationCoordinate2D(latitude: place.lat, longitude: place.lng))
+                self.createAnnotation(placeData: place)
             }
         }
     }
     
-    private func createAnnotation(placeId: String, placeName: String, coordinate: CLLocationCoordinate2D) {
-        if !annotations.contains(where: { $0.placeId == placeId }) {
-            let plans = placePlans[placeId] ?? []
+    private func createAnnotation(placeData: PlaceData) {
+        if !annotations.contains(where: { $0.placeId == placeData.id }) {
+            let plans = placePlans[placeData.id] ?? []
             let totalAmount = plans.count
             let completedAmount = plans.filter { $0.planState == .done }.count
             
-            let annotation = PlaceAnnotation(name: placeName, placeDescription: "", coordinate: coordinate, image: "", placeId: placeId, completedPlans: completedAmount, plans: totalAmount)
+            let annotation = PlaceAnnotation(name: placeData.name, placeDescription: "", coordinate: placeData.coordinate, image: placeData.imageUrl, placeId: placeData.id, completedPlans: completedAmount, plans: totalAmount)
             DispatchQueue.main.async {
                 self.annotations.append(annotation)
             }
@@ -113,23 +107,7 @@ class MapViewModel : ObservableObject {
         return (existingPlaceId, existingPlacePlans)
     }
     
-    func makePlaceAction(placeAction: PlaceActions){
-        switch placeAction {
-        case .createPlan(let placeId):
-            selectedPlaceId = placeId
-            openCreateView.toggle()
-        case .openPlacePlans(let placeData):
-            selectedPlaceId = placeData.id
-            selectedPlaceTitle = placeData.name
-            openPlacePlansView.toggle()
-        }
+    func moveToPlace(coordinate: CLLocationCoordinate2D) {
+        targetPlace = coordinate
     }
-    
-    /*
-    func resetSubValues() {
-        selectedPlaceId = nil
-        selectedPlaceTitle = nil
-        openCreateView = false
-        openPlacePlansView = false
-    }*/
 }

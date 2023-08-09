@@ -22,6 +22,9 @@ struct MapKitView: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         context.coordinator.mapView.mapType = viewModel.mapStyle.mapType
         context.coordinator.addAnnotaions(annotations: viewModel.annotations)
+        if let targetPlace = viewModel.targetPlace {
+            context.coordinator.moveToPlace(coordinate: targetPlace)
+        }
     }
     
     func makeCoordinator() -> Coordinator {
@@ -33,11 +36,11 @@ struct MapKitView: UIViewRepresentable {
 
 extension MapKitView {
     
-    class Coordinator: NSObject, MKMapViewDelegate, AnnotationCalloutDelegate {
+    class Coordinator: NSObject, MKMapViewDelegate {
         
         private var parent: MapKitView
-        private var selectedAnnotation : MKAnnotationView?
         private var directions: MKDirections?
+        private var prevMoveCoordinate: CLLocationCoordinate2D?
         
         lazy var mapView: MKMapView = {
             let mv = MKMapView()
@@ -62,7 +65,6 @@ extension MapKitView {
         }
         
         func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-            // Handle region change here
             parent.viewModel.updatePlaces(center: mapView.region.center)
         }
         
@@ -71,49 +73,12 @@ extension MapKitView {
             mapView.addAnnotations(annotations)
         }
         
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            
-            if annotation.isEqual(mapView.userLocation)
-            {
-                return nil
-            }
-            
-            guard let annotation = annotation as? PlaceAnnotation else {return nil}
-            
-            var annotationView: MKAnnotationView
-            
-            if let view = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView") {
-                annotationView = view
-            } else {
-                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-                annotationView.canShowCallout = true
-                annotationView.calloutOffset = CGPoint(x: 0, y: 5)
-                
-                let calloutView = AnnotationCalloutView(annotation: annotation)
-                calloutView.widthAnchor.constraint(greaterThanOrEqualToConstant: 170).isActive = true
-                calloutView.heightAnchor.constraint(lessThanOrEqualToConstant: 100).isActive = true
-                calloutView.delegate = self
-                calloutView.translatesAutoresizingMaskIntoConstraints = false
-                
-                annotationView.detailCalloutAccessoryView = calloutView
-            }
-            
-            let image = UIImage(systemName: "star.fill")
-            //annotationView.tintColor
-            annotationView.image = image
-            //annotationView.tintColor = .red
-            
-            
-            return annotationView
-        }
-        
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            selectedAnnotation = view
+            if let annotation = view.annotation as? PlaceAnnotation {
+                parent.viewModel.selectedAnnotation = annotation
+            }
         }
         
-        func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-            selectedAnnotation = nil
-        }
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if overlay is MKPolyline {
@@ -126,26 +91,17 @@ extension MapKitView {
             return MKOverlayRenderer(overlay: overlay)
         }
         
-        //MARK: - annotation callout
-        func openPlacePlans() {
-            if let placeAnnotation = selectedAnnotation?.annotation as? PlaceAnnotation, let placeId = placeAnnotation.placeId, let title = placeAnnotation.title {
-                let data = PlaceData(placeId: placeId, name: title, lat: 0.0, lng: 0.0)
-                parent.viewModel.makePlaceAction(placeAction: .openPlacePlans(data))
+        func moveToPlace(coordinate: CLLocationCoordinate2D) {
+            if coordinate.latitude == prevMoveCoordinate?.latitude && coordinate.longitude == prevMoveCoordinate?.longitude {
+                return
+            } else {
+                prevMoveCoordinate = coordinate
             }
-        }
-        
-        func addPlan() {
-            if let placeAnnotation = selectedAnnotation?.annotation as? PlaceAnnotation, let placeId = placeAnnotation.placeId {
-                parent.viewModel.makePlaceAction(placeAction: .createPlan(placeId))
-            }
-        }
-        
-        func moveToPlace() {
-            guard let destinationAnnotation = selectedAnnotation?.annotation as? PlaceAnnotation,let userLocation = mapView.userLocation.location  else {
-                return }
+            
+            guard let userLocation = mapView.userLocation.location, let placeLocation = prevMoveCoordinate else { return }
             
             let sourcePlacemark = MKPlacemark(coordinate: userLocation.coordinate)
-            let destinationPlacemark = MKPlacemark(coordinate: destinationAnnotation.coordinate)
+            let destinationPlacemark = MKPlacemark(coordinate: placeLocation)
             
             let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
             let destinationMapItem = MKMapItem(placemark: destinationPlacemark)

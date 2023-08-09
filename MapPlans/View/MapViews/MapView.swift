@@ -6,47 +6,26 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapView: View {
-    @ObservedObject var mapViewModel: MapViewModel = MapViewModel()
+    @EnvironmentObject var viewModel: MapViewModel
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 MapKitView()
-                    .environmentObject(mapViewModel)
                     .ignoresSafeArea()
                 
-                MapStylePickerView(style: $mapViewModel.mapStyle)
+                MapStylePickerView(style: $viewModel.mapStyle)
+                
+                if viewModel.selectedAnnotation != nil {
+                    SelectedAnnotationView()
+                        .ignoresSafeArea()
+                }
             }
             .navigationViewStyle(.stack)
-            .background(
-                NavigationLink(
-                    destination: createPlanView,
-                    isActive: $mapViewModel.openCreateView
-                ) {
-                    EmptyView()
-                }
-                    .hidden()
-            )
-            .background(
-                NavigationLink(
-                    destination: placePlansView,
-                    isActive: $mapViewModel.openPlacePlansView
-                ) {
-                    EmptyView()
-                }
-                    .hidden()
-            )
         }
-    }
-    
-    var placePlansView: some View {
-        PlacePlansView(placeId: mapViewModel.selectedPlaceId, placeTitle: mapViewModel.selectedPlaceTitle)
-    }
-    
-    var createPlanView: some View {
-        PlanSetupView(placeId: mapViewModel.selectedPlaceId)
     }
 }
 

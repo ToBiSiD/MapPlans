@@ -13,6 +13,7 @@ protocol CustomOption: CaseIterable, Equatable, Hashable {
     var optionTitle: String { get }
     var optionColor: Color { get }
     var defaultOption: any CustomOption { get }
+    var optionImage: String { get }
 }
 
 enum MapStyleOption: UInt, CustomOption {
@@ -49,4 +50,6 @@ enum MapStyleOption: UInt, CustomOption {
     }
     
     var defaultOption: any CustomOption { return Self.standard }
+    
+    var optionImage: String { return ""}
 }

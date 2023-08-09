@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var mapViewModel = MapViewModel()
+    
     var body: some View {
        MapView()
+            .environmentObject(mapViewModel)
     }
 }
 

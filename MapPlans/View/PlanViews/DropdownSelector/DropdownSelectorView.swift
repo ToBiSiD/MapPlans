@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct DropdownSelectorView<Option : CustomOption>: View {
+struct DropdownSelectorView: View {
         @State private var shouldShowDropdown = false
-        @State private var selectedOption: Option? = nil
-        var defaultOption: Option
-        var options: [Option]
-        var onOptionSelected: ((_ option: Option) -> Void)?
+        @State private var selectedOption: PlanState? = nil
+        var defaultOption: PlanState
+        var options: [PlanState]
+        var onOptionSelected: ((_ option: PlanState) -> Void)?
         private let buttonHeight: CGFloat = 45
 
         var body: some View {
@@ -22,27 +22,10 @@ struct DropdownSelectorView<Option : CustomOption>: View {
                 }
             }) {
                 HStack {
-                    HStack {
-                        ZStack {
-                            Circle()
-                                .background(Color.gray)
-                                .frame(width: 20)
-                            
-                            if let color = selectedOption?.optionColor {
-                                Circle()
-                                    .background(color)
-                                    .frame(width: 16)
-                            } else {
-                                Circle()
-                                    .background(defaultOption.optionColor)
-                                    .frame(width: 16)
-                            }
-                        }
-                        Text(selectedOption == nil ? defaultOption.optionTitle : selectedOption!.optionTitle)
-                            .font(.system(size: 14))
-                            .foregroundColor(selectedOption == nil ? Color.gray: Color.black)
+                    if let planState = (selectedOption != nil ? selectedOption : defaultOption) {
+                        PlanStateView(option: planState)
                     }
-
+                    
                     Spacer()
 
                     Image(systemName: self.shouldShowDropdown ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
@@ -55,7 +38,7 @@ struct DropdownSelectorView<Option : CustomOption>: View {
             .padding(.horizontal)
             .cornerRadius(5)
             .frame(height: self.buttonHeight)
-            .frame(maxWidth: 150)
+            .frame(maxWidth: 200)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.gray, lineWidth: 1)
@@ -76,49 +59,4 @@ struct DropdownSelectorView<Option : CustomOption>: View {
                 RoundedRectangle(cornerRadius: 5).fill(Color.white)
             )
         }
-}
-
-struct Dropdown<Option : CustomOption>: View {
-    var options: [Option]
-    var onOptionSelected: ((_ option: Option) -> Void)?
-
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(self.options, id: \.self) { option in
-                    DropdownRow(option: option, onOptionSelected: self.onOptionSelected)
-                }
-            }
-        }
-        .frame(height: 100)
-        .padding(.vertical, 5)
-        .background(Color.white)
-        .cornerRadius(5)
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.gray, lineWidth: 1)
-        )
-    }
-}
-
-struct DropdownRow<Option : CustomOption>: View {
-    var option: Option
-    var onOptionSelected: ((_ option: Option) -> Void)?
-
-    var body: some View {
-        Button(action: {
-            if let onOptionSelected = self.onOptionSelected {
-                onOptionSelected(self.option)
-            }
-        }) {
-            HStack {
-                Text(self.option.optionTitle)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.black)
-                Spacer()
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 5)
-    }
 }

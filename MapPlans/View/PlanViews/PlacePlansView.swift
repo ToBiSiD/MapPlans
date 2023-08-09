@@ -33,15 +33,9 @@ struct PlacePlansView: View {
             .padding(.horizontal)
             
             List {
-                if let plans = viewModel.plans{
+                if let plans = viewModel.plans {
                     ForEach(plans) { plan in
-                        PlanRowView(plan: plan)
-                            .overlay {
-                                NavigationLink {
-                                    PlanSetupView(placeId: viewModel.placeId, plan: plan)
-                                } label: {
-                                }
-                            }
+                        PlanRowView(plan: plan, placeId: viewModel.placeId)
                     }
                 }
             }

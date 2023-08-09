@@ -40,11 +40,15 @@ class PlaceAnnotation : NSObject, MKAnnotation, Identifiable {
     }
     
     var plansProgress: String {
-        return "\(completedPlans)/\(plans)"
+        return "Completed plans: \(completedPlans)/\(plans)"
     }
     
     var plansProgressValue: Double {
         return Double(completedPlans)/Double(plans)
     }
     
+}
+
+extension PlaceAnnotation {
+    static let MockAnnotation = PlaceAnnotation(name: "Mock Annotation",placeDescription: "Mock annotation place description",coordinate: CLLocationCoordinate2D(latitude: 37.33459999999999, longitude: -122.00919999999999),placeId: "___", completedPlans: 5, plans: 7)
 }

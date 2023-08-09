@@ -23,11 +23,19 @@ enum PlanState: String , CustomOption {
     
     var optionColor: Color {
         switch self {
-        case .toDo: return .blue
-        case .inProgress: return .yellow
+        case .toDo: return Color(.lightGray)
+        case .inProgress: return .blue
         case .done: return .green
         }
     }
     
-    var defaultOption: any CustomOption { return Self.toDo}
+    var defaultOption: any CustomOption { return Self.toDo }
+    
+    var optionImage: String {
+        switch self {
+        case .toDo: return "xmark.circle"
+        case .inProgress: return "timer"
+        case .done: return "checkmark.circle"
+        }
+    }
 }

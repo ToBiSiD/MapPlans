@@ -40,7 +40,7 @@ class PlaceAnnotation : NSObject, MKAnnotation, Identifiable {
     }
     
     var plansProgress: String {
-        return "Completed plans: \(completedPlans)/\(plans)"
+        return "\(completedPlans)/\(plans)"
     }
     
     var plansProgressValue: Double {

@@ -11,8 +11,7 @@ import Combine
 
 struct MapKitView: UIViewRepresentable {
     @EnvironmentObject var viewModel: MapViewModel
-    @State private var initialRegion: MKCoordinateRegion?
-    
+   
     func makeUIView(context: Context) -> MKMapView {
         let mapView = context.coordinator.mapView
         mapView.mapType = viewModel.mapStyle.mapType
@@ -44,10 +43,17 @@ extension MapKitView {
         
         lazy var mapView: MKMapView = {
             let mv = MKMapView()
+            
             mv.delegate = self
             mv.isRotateEnabled = true
             mv.userTrackingMode = .follow
             mv.showsUserLocation = true
+            
+            if let coordinate = LocationManager.shared.location?.coordinate {
+                let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005 , longitudeDelta: 0.005))
+                mv.setRegion(region, animated: true)
+            }
+            
             return mv
         }()
         
@@ -60,12 +66,20 @@ extension MapKitView {
         
         //MARK: - map delegates
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-            let region = MKCoordinateRegion(center: userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005 , longitudeDelta: 0.005))
-            mapView.setRegion(region, animated: true)
+            if parent.viewModel.trackUserLocation {
+                let region = MKCoordinateRegion(center: userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005 , longitudeDelta: 0.005))
+                mapView.setRegion(region, animated: true)
+            }
         }
         
         func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-            parent.viewModel.updatePlaces(center: mapView.region.center)
+            setCurrentMapPlace(place: mapView.region.center)
+        }
+        
+        private func setCurrentMapPlace(place: CLLocationCoordinate2D) {
+            DispatchQueue.main.async {
+                self.parent.viewModel.tryUpdateCurrentMapPlace(place)
+            }
         }
         
         func addAnnotaions(annotations: [PlaceAnnotation]) {
@@ -83,8 +97,8 @@ extension MapKitView {
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if overlay is MKPolyline {
                 let renderer = MKPolylineRenderer(overlay: overlay)
-                renderer.strokeColor = UIColor.blue
-                renderer.lineWidth = 3
+                renderer.strokeColor = UIColor(ColorConstants.backgroundColor)
+                renderer.lineWidth = 5
                 return renderer
             }
             
@@ -117,11 +131,9 @@ extension MapKitView {
                     return
                 }
                 
-                // Remove any existing overlays before adding the new route
                 mapView.removeOverlays(mapView.overlays)
                 mapView.addOverlay(route.polyline, level: .aboveRoads)
                 
-                // Optionally, you can also adjust the visible region to show the route
                 mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0), animated: true)
             }
         }

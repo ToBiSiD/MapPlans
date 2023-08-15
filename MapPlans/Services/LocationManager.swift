@@ -7,10 +7,13 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
 class LocationManager: NSObject, ObservableObject {
+    static var shared = LocationManager()
     private let locationManager = CLLocationManager()
-    var location: CLLocation?
+    
+    @Published var location: CLLocation?
     
     override init() {
         super.init()
@@ -25,7 +28,6 @@ class LocationManager: NSObject, ObservableObject {
 
 extension LocationManager : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         guard let loc = locations.last else { return }
         
         DispatchQueue.main.async {

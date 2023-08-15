@@ -12,19 +12,24 @@ struct MapView: View {
     @EnvironmentObject var viewModel: MapViewModel
     
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                MapKitView()
+        ZStack(alignment: .bottomTrailing) {
+            MapKitView()
+                .ignoresSafeArea()
+            
+            MapStylePickerView(style: $viewModel.mapStyle)
+            
+            if viewModel.selectedAnnotation != nil {
+                SelectedAnnotationView()
                     .ignoresSafeArea()
-                
-                MapStylePickerView(style: $viewModel.mapStyle)
-                
-                if viewModel.selectedAnnotation != nil {
-                    SelectedAnnotationView()
-                        .ignoresSafeArea()
-                }
             }
-            .navigationViewStyle(.stack)
+            
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarBackButtonView()
+            }
         }
     }
 }

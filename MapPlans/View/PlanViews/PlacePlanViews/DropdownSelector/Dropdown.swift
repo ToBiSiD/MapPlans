@@ -21,11 +21,11 @@ struct Dropdown: View {
         }
         .frame(height: 100)
         .padding(.vertical, 5)
-        .background(Color.white)
-        .cornerRadius(5)
+        .background(ColorConstants.backgroundColor)
+        .cornerRadius(ValueConstants.defaultCornerRadius)
         .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.gray, lineWidth: 1)
+            RoundedRectangle(cornerRadius: ValueConstants.defaultCornerRadius)
+                .stroke(ColorConstants.shadowColor, lineWidth: 1)
         )
     }
 }

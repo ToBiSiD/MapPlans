@@ -26,7 +26,7 @@ struct PlanStateView: View {
             
             Image(systemName: option.optionImage)
                 .frame(width: iconSize)
-                .foregroundColor(.black)
+                .foregroundColor(Color(.black))
         }
         
         if !isReverse {
@@ -37,12 +37,12 @@ struct PlanStateView: View {
     var stateTitle: some View {
         Text(self.option.optionTitle)
             .font(.system(size: fontSize))
-            .foregroundColor(Color.black)
+            .foregroundColor(ColorConstants.textColor)
     }
 }
 
 struct PlanStateView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanStateView(option: .toDo)
+        PlanStateView(option: .inProgress)
     }
 }

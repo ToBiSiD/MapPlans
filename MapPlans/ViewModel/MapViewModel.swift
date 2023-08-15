@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import CoreLocation
+import Combine
 
 class MapViewModel : ObservableObject {
     @Published var mapStyle: MapStyleOption = .standard
@@ -16,98 +17,128 @@ class MapViewModel : ObservableObject {
     @Published var selectedAnnotation: PlaceAnnotation?
     @Published var targetPlace: CLLocationCoordinate2D?
     
-    private var placePlans: [String : [Plan]] = [:]
-    private let realmService: RealmService = RealmService()
-    private let placesService: PlacesService = PlacesService()
+    @Published var currentMapPlace: CLLocationCoordinate2D?
+    @Published var trackUserLocation: Bool = false
     
-    public static var shared: MapViewModel = MapViewModel()
+    private var cancellables: Set<AnyCancellable> = []
+    private var placePlans: [String: [Plan]] = [:]
+    private var url : URL? {
+        if let center = currentMapPlace {
+            let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(AppConstants.searchRadius)&key=\(AppConstants.googlePlacesApiKey)"
+            return URL(string: urlString)
+        } else {
+            return nil
+        }
+    }
     
     init() {
-        fetchPlans()
+        subscribeOnRealmService()
+        subscribeOnPlacesService()
     }
     
-    //MARK: - Work with plans
-    private func fetchPlans() {
-        let allPlans: Results<Plan>? = realmService.fetchData()
-        if let allPlans = allPlans {
-            for plan in allPlans {
-                var placeId: String
-                if let planPlaceId = plan.placeId {
-                    placeId = planPlaceId
-                } else {
-                    placeId = "unknown"
+    private func subscribeOnRealmService() {
+        RealmService.shared.fetchPlans().collectionPublisher
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-                
-                var plansForPlace = self.placePlans[placeId] ?? []
-                plansForPlace.append(plan)
-                
-                self.placePlans[placeId] = plansForPlace
-            }
-        }
-    }
-    
-    func updatePlanState(planId: ObjectId) {
-        let existingPlaceSearchResult = tryGetExistingPlaceInfo(planId: planId)
-        if let placeId = existingPlaceSearchResult.placeId, let plans = existingPlaceSearchResult.placePlans {
-            for annotation in annotations.filter({ $0.placeId == placeId }) {
-                annotation.completedPlans = plans.filter { $0.planState == .done }.count
-            }
-        }
-    }
-    
-    func removePlan(planId: ObjectId) {
-        let existingPlaceSearchResult = tryGetExistingPlaceInfo(planId: planId)
-        if let placeId = existingPlaceSearchResult.placeId, var plans = existingPlaceSearchResult.placePlans {
-            plans.removeAll { $0.id == planId }
-            for annotation in annotations.filter({ $0.placeId == placeId }) {
-                annotation.plans = plans.count
-                annotation.completedPlans = plans.filter { $0.planState == .done }.count
-            }
-        }
-    }
-    
-    //MARK: - Work with places
-    func updatePlaces(center: CLLocationCoordinate2D) {
-        placesService.fetchPlacesFromGoogleAPI(with: center, existingAnnotations: annotations, existingPlans: placePlans) { additionalPlaces in
-            let convertedDictionary: [String : [Plan]] = Dictionary(uniqueKeysWithValues: additionalPlaces.map { placeData in
-                (placeData.placeId, placeData.plans)
+            }, receiveValue: { updatedPlans in
+                self.updatePlans(Array(updatedPlans))
             })
-            let combine = self.placePlans.merging(convertedDictionary) { $1 }
-            self.placePlans = combine
-            for place in additionalPlaces {
-                self.createAnnotation(placeData: place)
+            .store(in: &cancellables)
+        
+    }
+    
+    
+    private func subscribeOnPlacesService() {
+        $currentMapPlace
+            .compactMap { location in
+                self.url
             }
+            .flatMap { url in
+                PlacesAPIService.shared.fetchPlaces(with: url)
+            }
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Fetching places failed with error: \(error)")
+                }
+            }, receiveValue: { searchResults in
+                self.tryAddPlaces(places: searchResults)
+            })
+            .store(in: &cancellables)
+    }
+    
+    deinit {
+        for cancellable in cancellables {
+            cancellable.cancel()
         }
     }
     
-    private func createAnnotation(placeData: PlaceData) {
-        if !annotations.contains(where: { $0.placeId == placeData.id }) {
-            let plans = placePlans[placeData.id] ?? []
-            let totalAmount = plans.count
-            let completedAmount = plans.filter { $0.planState == .done }.count
+    private func tryAddPlaces(places: [SearchResult]) {
+        let placesToAdd = places.filter { !$0.types.contains(where: AppConstants.placeTypeExceptions.contains) }
+        
+        for place in placesToAdd {
+            if annotations.contains(where: { $0.placeId == place.placeId }) {
+                continue
+            }
             
-            let annotation = PlaceAnnotation(name: placeData.name, placeDescription: "", coordinate: placeData.coordinate, image: placeData.imageUrl, placeId: placeData.id, completedPlans: completedAmount, plans: totalAmount)
-            DispatchQueue.main.async {
-                self.annotations.append(annotation)
-            }
+            createPlaceAnnotation(place: place)
         }
     }
     
-    private func tryGetExistingPlaceInfo(planId: ObjectId) -> (placeId: String?, placePlans: [Plan]?) {
-        var existingPlaceId: String?
-        var existingPlacePlans: [Plan]?
-        for (key,value) in placePlans {
-            if value.contains(where: { $0.id == planId }){
-                existingPlaceId = key
-                existingPlacePlans = value
-                break
-            }
+    private func createPlaceAnnotation(place: SearchResult) {
+        let placePlanAmounts = getPlacePlansAmount(for: place.placeId)
+        
+        let annotation = PlaceAnnotation(name: place.name, placeDescription: "", coordinate: place.coordinate, image: place.imageUrl, placeId: place.placeId, completedPlans: placePlanAmounts.completed, plans: placePlanAmounts.total)
+        DispatchQueue.main.async {
+            self.annotations.append(annotation)
         }
         
-        return (existingPlaceId, existingPlacePlans)
+    }
+    
+    private func updatePlans(_ plans: [Plan]) {
+        placePlans = Dictionary(grouping: plans, by: { $0.placeId ?? "unknown" })
+        
+        for placeId in placePlans.keys {
+            recalculateAnnotation(for: placeId)
+        }
+    }
+    
+    private func recalculateAnnotation(for placeId: String?) {
+        if let placeId = placeId, let annotation = annotations.first(where: { $0.placeId == placeId }) {
+            let placePlanAmounts = getPlacePlansAmount(for: placeId)
+            
+            annotation.completedPlans = placePlanAmounts.completed
+            annotation.plans = placePlanAmounts.total
+        }
+    }
+    
+    private func getPlacePlansAmount(for placeId: String) -> (total: Int , completed: Int) {
+        let placePlans = placePlans[placeId] ?? []
+        return (placePlans.count, placePlans.filter { $0.planState == .done }.count)
     }
     
     func moveToPlace(coordinate: CLLocationCoordinate2D) {
         targetPlace = coordinate
+        trackUserLocation = true
+    }
+    
+    func tryUpdateCurrentMapPlace(_ newPosition : CLLocationCoordinate2D){
+        if let cashed = currentMapPlace {
+            let sourceLocation = CLLocation(latitude: newPosition.latitude, longitude: newPosition.longitude)
+            let currentLocation = CLLocation(latitude: cashed.latitude, longitude: cashed.longitude)
+            let distance = sourceLocation.distance(from: currentLocation)
+            if (distance/2) > AppConstants.searchRadius {
+                currentMapPlace = newPosition
+            }
+        } else {
+            currentMapPlace = newPosition
+        }
     }
 }

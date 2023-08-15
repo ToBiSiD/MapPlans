@@ -10,13 +10,13 @@ import SwiftUI
 struct BaseButtonLabel: View {
     var text: String = ""
     var imageName: String = ""
-    var bacgroundColor: Color = .blue
-    var foregroundColor: Color = .white
+    var bacgroundColor: Color = ColorConstants.buttonColor
+    var foregroundColor: Color = ColorConstants.textColor
     
     var body: some View {
         ZStack {
             bacgroundColor
-                .cornerRadius(10)
+                .cornerRadius(ValueConstants.defaultCornerRadius)
             
             HStack {
                 if !imageName.isEmpty {
@@ -33,6 +33,7 @@ struct BaseButtonLabel: View {
             .fontWeight(.heavy)
             .foregroundColor(foregroundColor)
         }
+        .shadow(color: ColorConstants.shadowColor ,radius: ValueConstants.defaultShadowRadius)
     }
 }
 

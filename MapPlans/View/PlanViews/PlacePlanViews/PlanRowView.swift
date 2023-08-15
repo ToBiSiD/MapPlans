@@ -10,11 +10,10 @@ import SwiftUI
 struct PlanRowView: View {
     @ObservedObject var viewModel: PlanRowViewModel
     @State var planState: PlanState
-    let placeId: String
     
-    init(plan: Plan, placeId: String) {
+    init(plan: Plan) {
+        
         self.viewModel = PlanRowViewModel(plan: plan)
-        self.placeId = placeId
         self.planState = plan.planState
     }
     
@@ -22,7 +21,7 @@ struct PlanRowView: View {
         mainContent
             .swipeActions(allowsFullSwipe: false, content: {
                 Button(role: .destructive) {
-                    MapViewModel.shared.removePlan(planId: viewModel.plan.id)
+                    viewModel.removePlan()
                 } label: {
                     Label("Remove", systemImage: "trash.fill")
                 }
@@ -38,9 +37,11 @@ struct PlanRowView: View {
             })
             .overlay {
                 NavigationLink {
-                    PlanSetupView(placeId: placeId, plan: viewModel.plan)
+                    if let placeId = viewModel.plan.placeId {
+                        PlanSetupView(placeId: placeId, plan: viewModel.plan)
+                    }
                 } label: {
-
+                    
                 }
             }
             .onChange(of: planState) { newValue in
@@ -56,16 +57,18 @@ struct PlanRowView: View {
                     Text(description)
                 }
             }
+            .foregroundColor(ColorConstants.textColor)
             
             Spacer()
             
             PlanStateView(option: viewModel.plan.planState, isReverse: true)
         }
+        .padding(.vertical, 10)
     }
 }
 
 struct PlanRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanRowView(plan: Plan.MockPlan, placeId: "")
+        PlanRowView(plan: Plan.MockPlan)
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 import CoreLocation
 
 struct SelectedAnnotationView: View {
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: MapViewModel
     
     var body: some View {
@@ -22,10 +21,18 @@ struct SelectedAnnotationView: View {
                         Spacer()
                         Button {
                             viewModel.selectedAnnotation = nil
-                            dismiss()
                         } label: {
-                            Image(systemName: "xmark")
-                                .foregroundColor(.gray)
+                            ZStack {
+                                Circle()
+                                    .frame(width: 30)
+                                    .foregroundColor(.white)
+                                
+                                Image(systemName: "xmark.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .scaledToFill()
+                                    .foregroundColor(ColorConstants.buttonColor)
+                            }
                         }
                     }
                     .frame(maxHeight: 30)
@@ -34,7 +41,7 @@ struct SelectedAnnotationView: View {
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
-                            if let name = annotation.name{
+                            if let name = annotation.name {
                                 Text(name)
                                     .lineLimit(1)
                                     .font(.title)
@@ -48,10 +55,13 @@ struct SelectedAnnotationView: View {
                                     .lineLimit(3)
                             }
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(ColorConstants.textColor)
                         .padding(.horizontal)
                         Spacer()
                     }
+                    
+                    CustomDividerView()
+                        .padding(.bottom,10)
                     
                     if let imageUrl = annotation.image, imageUrl.isEmpty {
                         AsyncImage(url: URL(string: imageUrl)) { image in
@@ -67,16 +77,11 @@ struct SelectedAnnotationView: View {
                         .padding(30)
                     }
                     
-                    ProgressView(value: annotation.plansProgressValue) {
-                    } currentValueLabel: {
-                        Text(annotation.plansProgress)
-                            .foregroundColor(.gray)
-                    }
-                    .tint(.pink)
-                    .padding(.horizontal)
-                    .padding(.vertical,15)
+                    ProgressPlansView(currentValue: annotation.plans == 0 ? 0 : annotation.plansProgressValue, maxValue: Double(annotation.plans), progressText: annotation.plansProgress)
+                        .padding(.horizontal)
+                        .padding(.bottom, 15)
                     
-                    HStack {
+                    HStack(spacing: 15) {
                         if let placeId = annotation.placeId {
                             NavigationLink {
                                 PlanSetupView(placeId: placeId)
@@ -93,7 +98,6 @@ struct SelectedAnnotationView: View {
                             Button {
                                 viewModel.moveToPlace(coordinate: annotation.coordinate)
                                 viewModel.selectedAnnotation = nil
-                                dismiss()
                             } label: {
                                 BaseButtonLabel(text: "Move", imageName: "figure.walk")
                             }
@@ -104,12 +108,13 @@ struct SelectedAnnotationView: View {
                     .frame(maxHeight: 45)
                     .padding(.bottom, 50)
                 }
-                .frame(maxHeight: 300)
-                .background(Color.white)
-                .cornerRadius(10)
+                .frame(maxHeight: 350)
+                .background(ColorConstants.backgroundColor)
+                .cornerRadius(ValueConstants.defaultCornerRadius)
             }
             .ignoresSafeArea(edges: .bottom)
         }
     }
     
 }
+

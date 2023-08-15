@@ -13,31 +13,45 @@ struct ImageTextFieldView: View {
     let placeholderText: String
     var imageName: String = ""
     var padding: CGFloat = 10
-    var cornerRadius: CGFloat = 15
+    var cornerRadius: CGFloat = ValueConstants.defaultCornerRadius
     var horizontalPadding: CGFloat = 30
     var imagePadding: CGFloat = 5
     var buttonSubmitLable: SubmitLabel = .continue
     var submitAction: (() -> Void)?
     
     var body: some View {
-        HStack {
+        ZStack {
+            RoundedBackgroundView()
+            .frame(maxHeight: 40)
             
+            mainView
+                .frame(maxHeight: 40)
+                .padding(.horizontal)
+            
+        }
+        .padding(padding)
+        .padding(.horizontal, horizontalPadding)
+        
+    }
+    
+    var mainView : some View {
+        HStack {
             if(!imageName.isEmpty){
                 HStack {
                     Image(systemName: imageName)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 20)
-                        //.foregroundColor(Color("TextTintColor"))
+                        .foregroundColor(ColorConstants.textTintColor)
                 }
                 .padding(.horizontal, imagePadding)
             }
             
             if isSecurityField {
                 SecureField("", text: $textValue)
-                    .foregroundColor(.white)//Color("TextColor"))
+                    .foregroundColor(ColorConstants.textColor)
                     .placeholder(when: textValue.isEmpty, placeholder: {
-                        Text(placeholderText)//.foregroundColor(Color("TextTintColor"))
+                        Text(placeholderText).foregroundColor(ColorConstants.textTintColor)
                     })
                     .submitLabel(buttonSubmitLable)
                     .onSubmit {
@@ -48,9 +62,9 @@ struct ImageTextFieldView: View {
                     .font(.subheadline)
             } else {
                 TextField("", text: $textValue)
-                    .foregroundColor(.white)//Color("TextColor"))
+                    .foregroundColor(ColorConstants.textColor)
                     .placeholder(when: textValue.isEmpty, placeholder: {
-                        Text(placeholderText)//.foregroundColor(Color("TextTintColor"))
+                        Text(placeholderText).foregroundColor(ColorConstants.textTintColor)
                     })
                     .submitLabel(buttonSubmitLable)
                     .onSubmit {
@@ -61,12 +75,5 @@ struct ImageTextFieldView: View {
                     .font(.subheadline)
             }
         }
-        .frame(maxHeight: 35)
-        .padding(padding)
-        //.background(Color("SelfColor"))
-        .cornerRadius(cornerRadius)
-        .padding(.horizontal, horizontalPadding)
-        .shadow(color: .gray, radius: 10)
-        
     }
 }

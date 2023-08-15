@@ -15,6 +15,14 @@
 		D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C012A828FF800FFB0AD /* Dropdown.swift */; };
 		D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C032A82901600FFB0AD /* DropdownRow.swift */; };
 		D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */; };
+		D22E4C0C2A86399800FFB0AD /* AllPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */; };
+		D2361CD62A8B7F4600D5E11B /* CustomDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */; };
+		D2361CD92A8B805500D5E11B /* CodableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CD82A8B805500D5E11B /* CodableKeys.swift */; };
+		D2361CDB2A8B806F00D5E11B /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDA2A8B806F00D5E11B /* UIConstants.swift */; };
+		D2361CDD2A8B863E00D5E11B /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */; };
+		D2361CDF2A8BB53500D5E11B /* ToolbarBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */; };
+		D2361CE12A8BBF4600D5E11B /* ProgressPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */; };
+		D2361CE32A8BC41700D5E11B /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */; };
 		D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */; };
 		D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E31B2A791C7B00688BE4 /* ContentView.swift */; };
 		D2E3E31E2A791C7C00688BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */; };
@@ -28,14 +36,13 @@
 		D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3382A792B9B00688BE4 /* Plan.swift */; };
 		D2E3E3402A792F4E00688BE4 /* PlanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E33F2A792F4E00688BE4 /* PlanState.swift */; };
 		D2E3E3422A792FD800688BE4 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3412A792FD800688BE4 /* RealmService.swift */; };
-		D2E3E3442A79498800688BE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3432A79498800688BE4 /* Constants.swift */; };
-		D2E3E3462A794A9200688BE4 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3452A794A9200688BE4 /* PlacesService.swift */; };
-		D2E3E3482A7950E600688BE4 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3472A7950E600688BE4 /* Root.swift */; };
+		D2E3E3442A79498800688BE4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3432A79498800688BE4 /* AppConstants.swift */; };
+		D2E3E3462A794A9200688BE4 /* PlacesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */; };
+		D2E3E3482A7950E600688BE4 /* PlacesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3472A7950E600688BE4 /* PlacesResult.swift */; };
 		D2E3E34A2A79556E00688BE4 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */; };
 		D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */; };
-		D2E3E34F2A7A590900688BE4 /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E34E2A7A590900688BE4 /* PlaceData.swift */; };
 		D2E3E3512A7A80DD00688BE4 /* PlacePlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */; };
-		D2E3E3532A7A80F800688BE4 /* PlacePlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3522A7A80F800688BE4 /* PlacePlansViewModel.swift */; };
+		D2E3E3532A7A80F800688BE4 /* PlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */; };
 		D2E3E3552A7A86E400688BE4 /* PlanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */; };
 		D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */; };
 		D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */; };
@@ -54,6 +61,14 @@
 		D22E4C012A828FF800FFB0AD /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		D22E4C032A82901600FFB0AD /* DropdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownRow.swift; sourceTree = "<group>"; };
 		D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachCustomOptionView.swift; sourceTree = "<group>"; };
+		D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlansView.swift; sourceTree = "<group>"; };
+		D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDividerView.swift; sourceTree = "<group>"; };
+		D2361CD82A8B805500D5E11B /* CodableKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableKeys.swift; sourceTree = "<group>"; };
+		D2361CDA2A8B806F00D5E11B /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButtonView.swift; sourceTree = "<group>"; };
+		D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPlansView.swift; sourceTree = "<group>"; };
+		D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		D2E3E3162A791C7B00688BE4 /* MapPlans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlansApp.swift; sourceTree = "<group>"; };
 		D2E3E31B2A791C7B00688BE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,14 +83,13 @@
 		D2E3E3382A792B9B00688BE4 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		D2E3E33F2A792F4E00688BE4 /* PlanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanState.swift; sourceTree = "<group>"; };
 		D2E3E3412A792FD800688BE4 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		D2E3E3432A79498800688BE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D2E3E3452A794A9200688BE4 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
-		D2E3E3472A7950E600688BE4 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		D2E3E3432A79498800688BE4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAPIService.swift; sourceTree = "<group>"; };
+		D2E3E3472A7950E600688BE4 /* PlacesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResult.swift; sourceTree = "<group>"; };
 		D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSetupViewModel.swift; sourceTree = "<group>"; };
-		D2E3E34E2A7A590900688BE4 /* PlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceData.swift; sourceTree = "<group>"; };
 		D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePlansView.swift; sourceTree = "<group>"; };
-		D2E3E3522A7A80F800688BE4 /* PlacePlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePlansViewModel.swift; sourceTree = "<group>"; };
+		D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewModel.swift; sourceTree = "<group>"; };
 		D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowView.swift; sourceTree = "<group>"; };
 		D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSetupView.swift; sourceTree = "<group>"; };
 		D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldView.swift; sourceTree = "<group>"; };
@@ -106,6 +120,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D22E4C092A86395B00FFB0AD /* PlacePlanViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */,
+				D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */,
+				D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */,
+			);
+			path = PlacePlanViewModels;
+			sourceTree = "<group>";
+		};
+		D22E4C0A2A86397700FFB0AD /* PlacePlanViews */ = {
+			isa = PBXGroup;
+			children = (
+				D2E3E36C2A7ED1C400688BE4 /* DropdownSelector */,
+				D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */,
+				D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */,
+				D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */,
+				D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */,
+			);
+			path = PlacePlanViews;
+			sourceTree = "<group>";
+		};
+		D2361CD72A8B803B00D5E11B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D2E3E3432A79498800688BE4 /* AppConstants.swift */,
+				D2361CD82A8B805500D5E11B /* CodableKeys.swift */,
+				D2361CDA2A8B806F00D5E11B /* UIConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D2E3E30D2A791C7B00688BE4 = {
 			isa = PBXGroup;
 			children = (
@@ -132,11 +178,10 @@
 				D2E3E3272A791CE200688BE4 /* View */,
 				D2E3E3292A791D0000688BE4 /* ViewModel */,
 				D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */,
-				D2E3E31B2A791C7B00688BE4 /* ContentView.swift */,
 				D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */,
 				D2E3E31F2A791C7C00688BE4 /* Preview Content */,
 				D2E3E34B2A7A46FB00688BE4 /* Services */,
-				D2E3E3432A79498800688BE4 /* Constants.swift */,
+				D2361CD72A8B803B00D5E11B /* Utils */,
 			);
 			path = MapPlans;
 			sourceTree = "<group>";
@@ -152,6 +197,7 @@
 		D2E3E3272A791CE200688BE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2E3E31B2A791C7B00688BE4 /* ContentView.swift */,
 				D2E3E35F2A7BC1F200688BE4 /* MapViews */,
 				D2E3E3602A7BC22000688BE4 /* Components */,
 				D2E3E3612A7BC22E00688BE4 /* PlanViews */,
@@ -173,9 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */,
-				D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */,
-				D2E3E3522A7A80F800688BE4 /* PlacePlansViewModel.swift */,
-				D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */,
+				D22E4C092A86395B00FFB0AD /* PlacePlanViewModels */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,7 +229,7 @@
 			children = (
 				D2E3E3362A792B7D00688BE4 /* LocationManager.swift */,
 				D2E3E3412A792FD800688BE4 /* RealmService.swift */,
-				D2E3E3452A794A9200688BE4 /* PlacesService.swift */,
+				D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +260,11 @@
 				D228299E2A8238690099CA2A /* BaseButtonLabel.swift */,
 				D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */,
 				D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */,
+				D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */,
+				D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */,
+				D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */,
+				D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */,
+				D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -223,11 +272,8 @@
 		D2E3E3612A7BC22E00688BE4 /* PlanViews */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E36C2A7ED1C400688BE4 /* DropdownSelector */,
-				D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */,
-				D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */,
-				D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */,
-				D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */,
+				D22E4C0A2A86397700FFB0AD /* PlacePlanViews */,
+				D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */,
 			);
 			path = PlanViews;
 			sourceTree = "<group>";
@@ -244,9 +290,8 @@
 		D2E3E3632A7BC38100688BE4 /* MapPlace */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E3472A7950E600688BE4 /* Root.swift */,
+				D2E3E3472A7950E600688BE4 /* PlacesResult.swift */,
 				D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */,
-				D2E3E34E2A7A590900688BE4 /* PlaceData.swift */,
 			);
 			path = MapPlace;
 			sourceTree = "<group>";
@@ -407,7 +452,7 @@
 				D2E3E34A2A79556E00688BE4 /* PlaceAnnotation.swift in Sources */,
 				D2E3E32D2A791D7600688BE4 /* MapKitView.swift in Sources */,
 				D2E3E32F2A791E6000688BE4 /* MapStyleOption.swift in Sources */,
-				D2E3E3532A7A80F800688BE4 /* PlacePlansViewModel.swift in Sources */,
+				D2E3E3532A7A80F800688BE4 /* PlansViewModel.swift in Sources */,
 				D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */,
 				D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */,
 				D2E3E3402A792F4E00688BE4 /* PlanState.swift in Sources */,
@@ -416,26 +461,33 @@
 				D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */,
 				D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */,
 				D2E3E32B2A791D1800688BE4 /* MapView.swift in Sources */,
-				D2E3E3462A794A9200688BE4 /* PlacesService.swift in Sources */,
+				D2E3E3462A794A9200688BE4 /* PlacesAPIService.swift in Sources */,
 				D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */,
-				D2E3E3442A79498800688BE4 /* Constants.swift in Sources */,
+				D2E3E3442A79498800688BE4 /* AppConstants.swift in Sources */,
 				D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */,
 				D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */,
-				D2E3E34F2A7A590900688BE4 /* PlaceData.swift in Sources */,
+				D2361CDB2A8B806F00D5E11B /* UIConstants.swift in Sources */,
 				D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */,
+				D2361CD62A8B7F4600D5E11B /* CustomDividerView.swift in Sources */,
+				D2361CDF2A8BB53500D5E11B /* ToolbarBackButtonView.swift in Sources */,
 				D2E3E3422A792FD800688BE4 /* RealmService.swift in Sources */,
 				D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */,
+				D2361CDD2A8B863E00D5E11B /* RoundedBackgroundView.swift in Sources */,
 				D22E4C002A828C4400FFB0AD /* PlanStateView.swift in Sources */,
 				D2E3E3312A791FFC00688BE4 /* MapViewModel.swift in Sources */,
 				D2E3E36B2A7EC9D600688BE4 /* PlanRowViewModel.swift in Sources */,
+				D2361CD92A8B805500D5E11B /* CodableKeys.swift in Sources */,
 				D2E3E3372A792B7D00688BE4 /* LocationManager.swift in Sources */,
 				D2E3E3512A7A80DD00688BE4 /* PlacePlansView.swift in Sources */,
+				D2361CE32A8BC41700D5E11B /* RoundedCorner.swift in Sources */,
 				D2E3E36E2A7ED1E100688BE4 /* DropdownSelectorView.swift in Sources */,
 				D2E3E3552A7A86E400688BE4 /* PlanRowView.swift in Sources */,
 				D228299D2A8233400099CA2A /* SelectedAnnotationView.swift in Sources */,
 				D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */,
-				D2E3E3482A7950E600688BE4 /* Root.swift in Sources */,
+				D2E3E3482A7950E600688BE4 /* PlacesResult.swift in Sources */,
+				D2361CE12A8BBF4600D5E11B /* ProgressPlansView.swift in Sources */,
 				D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */,
+				D22E4C0C2A86399800FFB0AD /* AllPlansView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +628,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +662,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

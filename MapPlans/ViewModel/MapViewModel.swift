@@ -22,9 +22,10 @@ class MapViewModel : ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     private var placePlans: [String: [Plan]] = [:]
+    
     private var url : URL? {
         if let center = currentMapPlace {
-            let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(AppConstants.searchRadius)&key=\(AppConstants.googlePlacesApiKey)"
+            let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(AppConstants.searchRadius)&key=\(ApiKeys.googlePlacesApiKey)"
             return URL(string: urlString)
         } else {
             return nil

@@ -7,8 +7,6 @@
 
 import Foundation
 
-struct AppConstants {
-    static let googlePlacesApiKey: String = "AIzaSyDglfhx6roNEUx1PEQqJ8ZvACiMdUHP-9g"
-    static let searchRadius: Double = 300.0
+struct AppConstants {    static let searchRadius: Double = 300.0
     static let placeTypeExceptions: [String] = ["transit_station"]
 }

@@ -23,6 +23,7 @@
 		D2361CDF2A8BB53500D5E11B /* ToolbarBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */; };
 		D2361CE12A8BBF4600D5E11B /* ProgressPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */; };
 		D2361CE32A8BC41700D5E11B /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */; };
+		D2361CE52A8D047500D5E11B /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE42A8D047500D5E11B /* ApiKeys.swift */; };
 		D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */; };
 		D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E31B2A791C7B00688BE4 /* ContentView.swift */; };
 		D2E3E31E2A791C7C00688BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButtonView.swift; sourceTree = "<group>"; };
 		D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPlansView.swift; sourceTree = "<group>"; };
 		D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		D2361CE42A8D047500D5E11B /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		D2E3E3162A791C7B00688BE4 /* MapPlans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlansApp.swift; sourceTree = "<group>"; };
 		D2E3E31B2A791C7B00688BE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D2E3E3432A79498800688BE4 /* AppConstants.swift */,
 				D2361CD82A8B805500D5E11B /* CodableKeys.swift */,
 				D2361CDA2A8B806F00D5E11B /* UIConstants.swift */,
+				D2361CE42A8D047500D5E11B /* ApiKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				D2E3E32B2A791D1800688BE4 /* MapView.swift in Sources */,
 				D2E3E3462A794A9200688BE4 /* PlacesAPIService.swift in Sources */,
 				D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */,
+				D2361CE52A8D047500D5E11B /* ApiKeys.swift in Sources */,
 				D2E3E3442A79498800688BE4 /* AppConstants.swift in Sources */,
 				D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */,
 				D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */,

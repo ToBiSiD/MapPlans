@@ -25,11 +25,15 @@ class MapViewModel : ObservableObject {
     
     private var url : URL? {
         if let center = currentMapPlace {
-            let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(AppConstants.searchRadius)&key=\(ApiKeys.googlePlacesApiKey)"
+            let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(center.latitude),\(center.longitude)&radius=\(AppConstants.searchRadius)&key=\(googlePlacesAPIKey)"
             return URL(string: urlString)
         } else {
             return nil
         }
+    }
+    
+    private var googlePlacesAPIKey: String {
+        return APIKeys.getValueForAPIKey(named: APIKeyId.googlePlaceAPIKey.rawValue)
     }
     
     init() {

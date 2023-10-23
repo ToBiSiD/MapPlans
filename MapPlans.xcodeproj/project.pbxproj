@@ -8,98 +8,146 @@
 
 /* Begin PBXBuildFile section */
 		2208947C63AACAB1096BB154 /* Pods_MapPlans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F633E367A66920B494A2A4F9 /* Pods_MapPlans.framework */; };
-		D228299D2A8233400099CA2A /* SelectedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */; };
-		D228299F2A8238690099CA2A /* BaseButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228299E2A8238690099CA2A /* BaseButtonLabel.swift */; };
-		D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */; };
-		D22E4C002A828C4400FFB0AD /* PlanStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */; };
-		D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C012A828FF800FFB0AD /* Dropdown.swift */; };
-		D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C032A82901600FFB0AD /* DropdownRow.swift */; };
-		D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */; };
-		D22E4C0C2A86399800FFB0AD /* AllPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */; };
-		D2361CD62A8B7F4600D5E11B /* CustomDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */; };
-		D2361CD92A8B805500D5E11B /* CodableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CD82A8B805500D5E11B /* CodableKeys.swift */; };
-		D2361CDB2A8B806F00D5E11B /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDA2A8B806F00D5E11B /* UIConstants.swift */; };
-		D2361CDD2A8B863E00D5E11B /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */; };
-		D2361CDF2A8BB53500D5E11B /* ToolbarBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */; };
-		D2361CE12A8BBF4600D5E11B /* ProgressPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */; };
-		D2361CE32A8BC41700D5E11B /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */; };
-		D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */; };
-		D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E31B2A791C7B00688BE4 /* ContentView.swift */; };
-		D2E3E31E2A791C7C00688BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */; };
-		D2E3E3212A791C7C00688BE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E3E3202A791C7C00688BE4 /* Preview Assets.xcassets */; };
-		D2E3E32B2A791D1800688BE4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E32A2A791D1800688BE4 /* MapView.swift */; };
-		D2E3E32D2A791D7600688BE4 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E32C2A791D7600688BE4 /* MapKitView.swift */; };
-		D2E3E32F2A791E6000688BE4 /* MapStyleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */; };
-		D2E3E3312A791FFC00688BE4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */; };
-		D2E3E3352A79291400688BE4 /* MapStylePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */; };
+		D20B44142AE6BB9A00BE23CB /* MapPlansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B440E2AE6BB9A00BE23CB /* MapPlansApp.swift */; };
+		D20B44152AE6BB9A00BE23CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20B440F2AE6BB9A00BE23CB /* Assets.xcassets */; };
+		D20B44162AE6BB9A00BE23CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20B44112AE6BB9A00BE23CB /* Preview Assets.xcassets */; };
+		D20B44172AE6BB9A00BE23CB /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D20B44122AE6BB9A00BE23CB /* ApiKeys.plist */; };
+		D20B44182AE6BB9A00BE23CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44132AE6BB9A00BE23CB /* ContentView.swift */; };
+		D20B44272AE6BBA400BE23CB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B441B2AE6BBA400BE23CB /* MapViewModel.swift */; };
+		D20B44282AE6BBA400BE23CB /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B441D2AE6BBA400BE23CB /* PlaceAnnotation.swift */; };
+		D20B44292AE6BBA400BE23CB /* PlacesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B441E2AE6BBA400BE23CB /* PlacesResult.swift */; };
+		D20B442A2AE6BBA400BE23CB /* MapStyleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B441F2AE6BBA400BE23CB /* MapStyleOption.swift */; };
+		D20B442B2AE6BBA400BE23CB /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44212AE6BBA400BE23CB /* Place.swift */; };
+		D20B442C2AE6BBA400BE23CB /* MapStylePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44232AE6BBA400BE23CB /* MapStylePickerView.swift */; };
+		D20B442D2AE6BBA400BE23CB /* SelectedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44242AE6BBA400BE23CB /* SelectedAnnotationView.swift */; };
+		D20B442E2AE6BBA400BE23CB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44252AE6BBA400BE23CB /* MapView.swift */; };
+		D20B442F2AE6BBA400BE23CB /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44262AE6BBA400BE23CB /* MapKitView.swift */; };
+		D20B44532AE6BBB300BE23CB /* PlanRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44322AE6BBB300BE23CB /* PlanRowViewModel.swift */; };
+		D20B44542AE6BBB300BE23CB /* PlacePlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44332AE6BBB300BE23CB /* PlacePlansViewModel.swift */; };
+		D20B44552AE6BBB300BE23CB /* BasePlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44342AE6BBB300BE23CB /* BasePlansViewModel.swift */; };
+		D20B44562AE6BBB300BE23CB /* AllPlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44352AE6BBB300BE23CB /* AllPlansViewModel.swift */; };
+		D20B44572AE6BBB300BE23CB /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44382AE6BBB300BE23CB /* Plan.swift */; };
+		D20B44582AE6BBB300BE23CB /* PlanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44392AE6BBB300BE23CB /* PlanState.swift */; };
+		D20B44592AE6BBB300BE23CB /* PlanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B443B2AE6BBB300BE23CB /* PlanRowView.swift */; };
+		D20B445A2AE6BBB300BE23CB /* AllPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B443C2AE6BBB300BE23CB /* AllPlansView.swift */; };
+		D20B445B2AE6BBB300BE23CB /* PlacePlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B443D2AE6BBB300BE23CB /* PlacePlansView.swift */; };
+		D20B445C2AE6BBB300BE23CB /* NotificationOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44402AE6BBB300BE23CB /* NotificationOption.swift */; };
+		D20B445D2AE6BBB300BE23CB /* LocationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44412AE6BBB300BE23CB /* LocationNotification.swift */; };
+		D20B445E2AE6BBB300BE23CB /* BaseNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44422AE6BBB300BE23CB /* BaseNotification.swift */; };
+		D20B445F2AE6BBB300BE23CB /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44442AE6BBB300BE23CB /* NotificationModel.swift */; };
+		D20B44602AE6BBB300BE23CB /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44452AE6BBB300BE23CB /* ScheduleNotification.swift */; };
+		D20B44612AE6BBB300BE23CB /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44462AE6BBB300BE23CB /* NotificationType.swift */; };
+		D20B44622AE6BBB300BE23CB /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44482AE6BBB300BE23CB /* NotificationSettingsView.swift */; };
+		D20B44632AE6BBB300BE23CB /* PlanSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B444B2AE6BBB300BE23CB /* PlanSetupViewModel.swift */; };
+		D20B44642AE6BBB300BE23CB /* PlanSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B444D2AE6BBB300BE23CB /* PlanSetupView.swift */; };
+		D20B44652AE6BBB300BE23CB /* PlanStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B444E2AE6BBB300BE23CB /* PlanStateView.swift */; };
+		D20B44662AE6BBB300BE23CB /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44502AE6BBB300BE23CB /* Dropdown.swift */; };
+		D20B44672AE6BBB300BE23CB /* DropdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44512AE6BBB300BE23CB /* DropdownRow.swift */; };
+		D20B44682AE6BBB300BE23CB /* DropdownSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44522AE6BBB300BE23CB /* DropdownSelectorView.swift */; };
+		D20B44712AE6BBE100BE23CB /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B446A2AE6BBE100BE23CB /* DataHandler.swift */; };
+		D20B44722AE6BBE100BE23CB /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B446B2AE6BBE100BE23CB /* NetworkHandler.swift */; };
+		D20B44732AE6BBE100BE23CB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B446D2AE6BBE100BE23CB /* AppState.swift */; };
+		D20B44742AE6BBE100BE23CB /* NotificationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B446E2AE6BBE100BE23CB /* NotificationInitializer.swift */; };
+		D20B44752AE6BBE100BE23CB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B446F2AE6BBE100BE23CB /* NotificationService.swift */; };
+		D20B44762AE6BBE100BE23CB /* PlacesCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44702AE6BBE100BE23CB /* PlacesCacheService.swift */; };
+		D20B44912AE6BBF800BE23CB /* UICustomOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44782AE6BBF800BE23CB /* UICustomOption.swift */; };
+		D20B44922AE6BBF800BE23CB /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447A2AE6BBF800BE23CB /* RoundedCorner.swift */; };
+		D20B44932AE6BBF800BE23CB /* PlanStateSwipeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447B2AE6BBF800BE23CB /* PlanStateSwipeButtonView.swift */; };
+		D20B44942AE6BBF800BE23CB /* ImageTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447C2AE6BBF800BE23CB /* ImageTextFieldView.swift */; };
+		D20B44952AE6BBF800BE23CB /* BaseButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447D2AE6BBF800BE23CB /* BaseButtonLabel.swift */; };
+		D20B44962AE6BBF800BE23CB /* ToolbarBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447E2AE6BBF800BE23CB /* ToolbarBackButtonView.swift */; };
+		D20B44972AE6BBF800BE23CB /* CustomDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B447F2AE6BBF800BE23CB /* CustomDividerView.swift */; };
+		D20B44982AE6BBF800BE23CB /* ProgressPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44802AE6BBF800BE23CB /* ProgressPlansView.swift */; };
+		D20B44992AE6BBF800BE23CB /* ForEachCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44812AE6BBF800BE23CB /* ForEachCustomOptionView.swift */; };
+		D20B449A2AE6BBF800BE23CB /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44822AE6BBF800BE23CB /* RoundedBackgroundView.swift */; };
+		D20B449B2AE6BBF800BE23CB /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44842AE6BBF800BE23CB /* UIApplication+Extensions.swift */; };
+		D20B449C2AE6BBF800BE23CB /* Animation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44852AE6BBF800BE23CB /* Animation+Extensions.swift */; };
+		D20B449D2AE6BBF800BE23CB /* AnyTransition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44862AE6BBF800BE23CB /* AnyTransition+Extensions.swift */; };
+		D20B449E2AE6BBF800BE23CB /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44872AE6BBF800BE23CB /* View+Extensions.swift */; };
+		D20B449F2AE6BBF800BE23CB /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44882AE6BBF800BE23CB /* CLLocation+Extensions.swift */; };
+		D20B44A02AE6BBF800BE23CB /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44892AE6BBF800BE23CB /* Date+Extensions.swift */; };
+		D20B44A12AE6BBF800BE23CB /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B448A2AE6BBF800BE23CB /* DebugLogger.swift */; };
+		D20B44A22AE6BBF800BE23CB /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B448B2AE6BBF800BE23CB /* DependencyInjector.swift */; };
+		D20B44A32AE6BBF800BE23CB /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B448D2AE6BBF800BE23CB /* UIConstants.swift */; };
+		D20B44A42AE6BBF800BE23CB /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B448E2AE6BBF800BE23CB /* ApiKeys.swift */; };
+		D20B44A52AE6BBF800BE23CB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B448F2AE6BBF800BE23CB /* AppConstants.swift */; };
+		D20B44A62AE6BBF800BE23CB /* CodableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20B44902AE6BBF800BE23CB /* CodableKeys.swift */; };
 		D2E3E3372A792B7D00688BE4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3362A792B7D00688BE4 /* LocationManager.swift */; };
-		D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3382A792B9B00688BE4 /* Plan.swift */; };
-		D2E3E3402A792F4E00688BE4 /* PlanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E33F2A792F4E00688BE4 /* PlanState.swift */; };
 		D2E3E3422A792FD800688BE4 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3412A792FD800688BE4 /* RealmService.swift */; };
-		D2E3E3442A79498800688BE4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3432A79498800688BE4 /* AppConstants.swift */; };
 		D2E3E3462A794A9200688BE4 /* PlacesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */; };
-		D2E3E3482A7950E600688BE4 /* PlacesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3472A7950E600688BE4 /* PlacesResult.swift */; };
-		D2E3E34A2A79556E00688BE4 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */; };
-		D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */; };
-		D2E3E3512A7A80DD00688BE4 /* PlacePlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */; };
-		D2E3E3532A7A80F800688BE4 /* PlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */; };
-		D2E3E3552A7A86E400688BE4 /* PlanRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */; };
-		D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */; };
-		D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */; };
-		D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E35B2A7A8CA500688BE4 /* ViewExtensions.swift */; };
-		D2E3E36B2A7EC9D600688BE4 /* PlanRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */; };
-		D2E3E36E2A7ED1E100688BE4 /* DropdownSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */; };
-		D2EE669A2A8FB937003ED60A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE66992A8FB937003ED60A /* ApiKeys.swift */; };
-		D2EE669C2A8FB9BE003ED60A /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2EE669B2A8FB9BE003ED60A /* ApiKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A58C5BE077610783FB672035 /* Pods-MapPlans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPlans.release.xcconfig"; path = "Target Support Files/Pods-MapPlans/Pods-MapPlans.release.xcconfig"; sourceTree = "<group>"; };
 		D028A3AE402641D19E3F3F1F /* Pods-MapPlans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPlans.debug.xcconfig"; path = "Target Support Files/Pods-MapPlans/Pods-MapPlans.debug.xcconfig"; sourceTree = "<group>"; };
-		D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAnnotationView.swift; sourceTree = "<group>"; };
-		D228299E2A8238690099CA2A /* BaseButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonLabel.swift; sourceTree = "<group>"; };
-		D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStateSwipeButtonView.swift; sourceTree = "<group>"; };
-		D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStateView.swift; sourceTree = "<group>"; };
-		D22E4C012A828FF800FFB0AD /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
-		D22E4C032A82901600FFB0AD /* DropdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownRow.swift; sourceTree = "<group>"; };
-		D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachCustomOptionView.swift; sourceTree = "<group>"; };
-		D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlansView.swift; sourceTree = "<group>"; };
-		D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDividerView.swift; sourceTree = "<group>"; };
-		D2361CD82A8B805500D5E11B /* CodableKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableKeys.swift; sourceTree = "<group>"; };
-		D2361CDA2A8B806F00D5E11B /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
-		D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
-		D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButtonView.swift; sourceTree = "<group>"; };
-		D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPlansView.swift; sourceTree = "<group>"; };
-		D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		D20B440E2AE6BB9A00BE23CB /* MapPlansApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlansApp.swift; sourceTree = "<group>"; };
+		D20B440F2AE6BB9A00BE23CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D20B44112AE6BB9A00BE23CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D20B44122AE6BB9A00BE23CB /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		D20B44132AE6BB9A00BE23CB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D20B441B2AE6BBA400BE23CB /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D20B441D2AE6BBA400BE23CB /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		D20B441E2AE6BBA400BE23CB /* PlacesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesResult.swift; sourceTree = "<group>"; };
+		D20B441F2AE6BBA400BE23CB /* MapStyleOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStyleOption.swift; sourceTree = "<group>"; };
+		D20B44212AE6BBA400BE23CB /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		D20B44232AE6BBA400BE23CB /* MapStylePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStylePickerView.swift; sourceTree = "<group>"; };
+		D20B44242AE6BBA400BE23CB /* SelectedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedAnnotationView.swift; sourceTree = "<group>"; };
+		D20B44252AE6BBA400BE23CB /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D20B44262AE6BBA400BE23CB /* MapKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
+		D20B44322AE6BBB300BE23CB /* PlanRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanRowViewModel.swift; sourceTree = "<group>"; };
+		D20B44332AE6BBB300BE23CB /* PlacePlansViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePlansViewModel.swift; sourceTree = "<group>"; };
+		D20B44342AE6BBB300BE23CB /* BasePlansViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePlansViewModel.swift; sourceTree = "<group>"; };
+		D20B44352AE6BBB300BE23CB /* AllPlansViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPlansViewModel.swift; sourceTree = "<group>"; };
+		D20B44382AE6BBB300BE23CB /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		D20B44392AE6BBB300BE23CB /* PlanState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanState.swift; sourceTree = "<group>"; };
+		D20B443B2AE6BBB300BE23CB /* PlanRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanRowView.swift; sourceTree = "<group>"; };
+		D20B443C2AE6BBB300BE23CB /* AllPlansView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPlansView.swift; sourceTree = "<group>"; };
+		D20B443D2AE6BBB300BE23CB /* PlacePlansView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePlansView.swift; sourceTree = "<group>"; };
+		D20B44402AE6BBB300BE23CB /* NotificationOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationOption.swift; sourceTree = "<group>"; };
+		D20B44412AE6BBB300BE23CB /* LocationNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationNotification.swift; sourceTree = "<group>"; };
+		D20B44422AE6BBB300BE23CB /* BaseNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotification.swift; sourceTree = "<group>"; };
+		D20B44442AE6BBB300BE23CB /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		D20B44452AE6BBB300BE23CB /* ScheduleNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
+		D20B44462AE6BBB300BE23CB /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		D20B44482AE6BBB300BE23CB /* NotificationSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		D20B444B2AE6BBB300BE23CB /* PlanSetupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSetupViewModel.swift; sourceTree = "<group>"; };
+		D20B444D2AE6BBB300BE23CB /* PlanSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSetupView.swift; sourceTree = "<group>"; };
+		D20B444E2AE6BBB300BE23CB /* PlanStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanStateView.swift; sourceTree = "<group>"; };
+		D20B44502AE6BBB300BE23CB /* Dropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		D20B44512AE6BBB300BE23CB /* DropdownRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownRow.swift; sourceTree = "<group>"; };
+		D20B44522AE6BBB300BE23CB /* DropdownSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownSelectorView.swift; sourceTree = "<group>"; };
+		D20B446A2AE6BBE100BE23CB /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		D20B446B2AE6BBE100BE23CB /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		D20B446D2AE6BBE100BE23CB /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D20B446E2AE6BBE100BE23CB /* NotificationInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationInitializer.swift; sourceTree = "<group>"; };
+		D20B446F2AE6BBE100BE23CB /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		D20B44702AE6BBE100BE23CB /* PlacesCacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCacheService.swift; sourceTree = "<group>"; };
+		D20B44782AE6BBF800BE23CB /* UICustomOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomOption.swift; sourceTree = "<group>"; };
+		D20B447A2AE6BBF800BE23CB /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		D20B447B2AE6BBF800BE23CB /* PlanStateSwipeButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanStateSwipeButtonView.swift; sourceTree = "<group>"; };
+		D20B447C2AE6BBF800BE23CB /* ImageTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextFieldView.swift; sourceTree = "<group>"; };
+		D20B447D2AE6BBF800BE23CB /* BaseButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButtonLabel.swift; sourceTree = "<group>"; };
+		D20B447E2AE6BBF800BE23CB /* ToolbarBackButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarBackButtonView.swift; sourceTree = "<group>"; };
+		D20B447F2AE6BBF800BE23CB /* CustomDividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDividerView.swift; sourceTree = "<group>"; };
+		D20B44802AE6BBF800BE23CB /* ProgressPlansView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPlansView.swift; sourceTree = "<group>"; };
+		D20B44812AE6BBF800BE23CB /* ForEachCustomOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEachCustomOptionView.swift; sourceTree = "<group>"; };
+		D20B44822AE6BBF800BE23CB /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		D20B44842AE6BBF800BE23CB /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		D20B44852AE6BBF800BE23CB /* Animation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animation+Extensions.swift"; sourceTree = "<group>"; };
+		D20B44862AE6BBF800BE23CB /* AnyTransition+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyTransition+Extensions.swift"; sourceTree = "<group>"; };
+		D20B44872AE6BBF800BE23CB /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		D20B44882AE6BBF800BE23CB /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		D20B44892AE6BBF800BE23CB /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		D20B448A2AE6BBF800BE23CB /* DebugLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLogger.swift; sourceTree = "<group>"; };
+		D20B448B2AE6BBF800BE23CB /* DependencyInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		D20B448D2AE6BBF800BE23CB /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		D20B448E2AE6BBF800BE23CB /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		D20B448F2AE6BBF800BE23CB /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		D20B44902AE6BBF800BE23CB /* CodableKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableKeys.swift; sourceTree = "<group>"; };
 		D2E3E3162A791C7B00688BE4 /* MapPlans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPlans.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlansApp.swift; sourceTree = "<group>"; };
-		D2E3E31B2A791C7B00688BE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2E3E3202A791C7C00688BE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D2E3E32A2A791D1800688BE4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		D2E3E32C2A791D7600688BE4 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
-		D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleOption.swift; sourceTree = "<group>"; };
-		D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStylePickerView.swift; sourceTree = "<group>"; };
 		D2E3E3362A792B7D00688BE4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		D2E3E3382A792B9B00688BE4 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
-		D2E3E33F2A792F4E00688BE4 /* PlanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanState.swift; sourceTree = "<group>"; };
 		D2E3E3412A792FD800688BE4 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		D2E3E3432A79498800688BE4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAPIService.swift; sourceTree = "<group>"; };
-		D2E3E3472A7950E600688BE4 /* PlacesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResult.swift; sourceTree = "<group>"; };
-		D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
-		D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSetupViewModel.swift; sourceTree = "<group>"; };
-		D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePlansView.swift; sourceTree = "<group>"; };
-		D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewModel.swift; sourceTree = "<group>"; };
-		D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowView.swift; sourceTree = "<group>"; };
-		D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSetupView.swift; sourceTree = "<group>"; };
-		D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldView.swift; sourceTree = "<group>"; };
-		D2E3E35B2A7A8CA500688BE4 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowViewModel.swift; sourceTree = "<group>"; };
-		D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectorView.swift; sourceTree = "<group>"; };
-		D2EE66992A8FB937003ED60A /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		D2EE669B2A8FB9BE003ED60A /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		F633E367A66920B494A2A4F9 /* Pods_MapPlans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPlans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,35 +172,276 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D22E4C092A86395B00FFB0AD /* PlacePlanViewModels */ = {
+		D20B440D2AE6BB9A00BE23CB /* AppStructure */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E34C2A7A473D00688BE4 /* PlanSetupViewModel.swift */,
-				D2E3E3522A7A80F800688BE4 /* PlansViewModel.swift */,
-				D2E3E36A2A7EC9D600688BE4 /* PlanRowViewModel.swift */,
+				D20B440E2AE6BB9A00BE23CB /* MapPlansApp.swift */,
+				D20B440F2AE6BB9A00BE23CB /* Assets.xcassets */,
+				D20B44102AE6BB9A00BE23CB /* Preview Content */,
+				D20B44122AE6BB9A00BE23CB /* ApiKeys.plist */,
+				D20B44132AE6BB9A00BE23CB /* ContentView.swift */,
 			);
-			path = PlacePlanViewModels;
+			path = AppStructure;
 			sourceTree = "<group>";
 		};
-		D22E4C0A2A86397700FFB0AD /* PlacePlanViews */ = {
+		D20B44102AE6BB9A00BE23CB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E36C2A7ED1C400688BE4 /* DropdownSelector */,
-				D2E3E3502A7A80DD00688BE4 /* PlacePlansView.swift */,
-				D2E3E3542A7A86E400688BE4 /* PlanRowView.swift */,
-				D2E3E3562A7A8C2900688BE4 /* PlanSetupView.swift */,
-				D22E4BFF2A828C4400FFB0AD /* PlanStateView.swift */,
+				D20B44112AE6BB9A00BE23CB /* Preview Assets.xcassets */,
 			);
-			path = PlacePlanViews;
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D20B44192AE6BBA400BE23CB /* MapModule */ = {
+			isa = PBXGroup;
+			children = (
+				D20B441A2AE6BBA400BE23CB /* ViewModel */,
+				D20B441C2AE6BBA400BE23CB /* Model */,
+				D20B44222AE6BBA400BE23CB /* View */,
+			);
+			path = MapModule;
+			sourceTree = "<group>";
+		};
+		D20B441A2AE6BBA400BE23CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B441B2AE6BBA400BE23CB /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D20B441C2AE6BBA400BE23CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D20B441D2AE6BBA400BE23CB /* PlaceAnnotation.swift */,
+				D20B441E2AE6BBA400BE23CB /* PlacesResult.swift */,
+				D20B441F2AE6BBA400BE23CB /* MapStyleOption.swift */,
+				D20B44202AE6BBA400BE23CB /* RealmModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D20B44202AE6BBA400BE23CB /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44212AE6BBA400BE23CB /* Place.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
+		D20B44222AE6BBA400BE23CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44232AE6BBA400BE23CB /* MapStylePickerView.swift */,
+				D20B44242AE6BBA400BE23CB /* SelectedAnnotationView.swift */,
+				D20B44252AE6BBA400BE23CB /* MapView.swift */,
+				D20B44262AE6BBA400BE23CB /* MapKitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D20B44302AE6BBB300BE23CB /* PlacePlansModule */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44312AE6BBB300BE23CB /* ViewModel */,
+				D20B44362AE6BBB300BE23CB /* Model */,
+				D20B443A2AE6BBB300BE23CB /* View */,
+			);
+			name = PlacePlansModule;
+			path = MapPlans/PlacePlansModule;
+			sourceTree = SOURCE_ROOT;
+		};
+		D20B44312AE6BBB300BE23CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44322AE6BBB300BE23CB /* PlanRowViewModel.swift */,
+				D20B44332AE6BBB300BE23CB /* PlacePlansViewModel.swift */,
+				D20B44342AE6BBB300BE23CB /* BasePlansViewModel.swift */,
+				D20B44352AE6BBB300BE23CB /* AllPlansViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D20B44362AE6BBB300BE23CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44372AE6BBB300BE23CB /* RealmModel */,
+				D20B44392AE6BBB300BE23CB /* PlanState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D20B44372AE6BBB300BE23CB /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44382AE6BBB300BE23CB /* Plan.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
+		D20B443A2AE6BBB300BE23CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D20B443B2AE6BBB300BE23CB /* PlanRowView.swift */,
+				D20B443C2AE6BBB300BE23CB /* AllPlansView.swift */,
+				D20B443D2AE6BBB300BE23CB /* PlacePlansView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D20B443E2AE6BBB300BE23CB /* NotificationSetupModule */ = {
+			isa = PBXGroup;
+			children = (
+				D20B443F2AE6BBB300BE23CB /* Model */,
+				D20B44472AE6BBB300BE23CB /* View */,
+			);
+			name = NotificationSetupModule;
+			path = MapPlans/NotificationSetupModule;
+			sourceTree = SOURCE_ROOT;
+		};
+		D20B443F2AE6BBB300BE23CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44402AE6BBB300BE23CB /* NotificationOption.swift */,
+				D20B44412AE6BBB300BE23CB /* LocationNotification.swift */,
+				D20B44422AE6BBB300BE23CB /* BaseNotification.swift */,
+				D20B44432AE6BBB300BE23CB /* RealmModel */,
+				D20B44452AE6BBB300BE23CB /* ScheduleNotification.swift */,
+				D20B44462AE6BBB300BE23CB /* NotificationType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D20B44432AE6BBB300BE23CB /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44442AE6BBB300BE23CB /* NotificationModel.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
+		D20B44472AE6BBB300BE23CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44482AE6BBB300BE23CB /* NotificationSettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D20B44492AE6BBB300BE23CB /* PlanSetupModule */ = {
+			isa = PBXGroup;
+			children = (
+				D20B444A2AE6BBB300BE23CB /* ViewModel */,
+				D20B444C2AE6BBB300BE23CB /* View */,
+			);
+			name = PlanSetupModule;
+			path = MapPlans/PlanSetupModule;
+			sourceTree = SOURCE_ROOT;
+		};
+		D20B444A2AE6BBB300BE23CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D20B444B2AE6BBB300BE23CB /* PlanSetupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D20B444C2AE6BBB300BE23CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D20B444D2AE6BBB300BE23CB /* PlanSetupView.swift */,
+				D20B444E2AE6BBB300BE23CB /* PlanStateView.swift */,
+				D20B444F2AE6BBB300BE23CB /* DropdownSelector */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D20B444F2AE6BBB300BE23CB /* DropdownSelector */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44502AE6BBB300BE23CB /* Dropdown.swift */,
+				D20B44512AE6BBB300BE23CB /* DropdownRow.swift */,
+				D20B44522AE6BBB300BE23CB /* DropdownSelectorView.swift */,
+			);
+			path = DropdownSelector;
+			sourceTree = "<group>";
+		};
+		D20B44692AE6BBE100BE23CB /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				D20B446A2AE6BBE100BE23CB /* DataHandler.swift */,
+				D20B446B2AE6BBE100BE23CB /* NetworkHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		D20B446C2AE6BBE100BE23CB /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				D20B446D2AE6BBE100BE23CB /* AppState.swift */,
+				D20B446E2AE6BBE100BE23CB /* NotificationInitializer.swift */,
+				D20B446F2AE6BBE100BE23CB /* NotificationService.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		D20B44772AE6BBF800BE23CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44782AE6BBF800BE23CB /* UICustomOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D20B44792AE6BBF800BE23CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D20B447A2AE6BBF800BE23CB /* RoundedCorner.swift */,
+				D20B447B2AE6BBF800BE23CB /* PlanStateSwipeButtonView.swift */,
+				D20B447C2AE6BBF800BE23CB /* ImageTextFieldView.swift */,
+				D20B447D2AE6BBF800BE23CB /* BaseButtonLabel.swift */,
+				D20B447E2AE6BBF800BE23CB /* ToolbarBackButtonView.swift */,
+				D20B447F2AE6BBF800BE23CB /* CustomDividerView.swift */,
+				D20B44802AE6BBF800BE23CB /* ProgressPlansView.swift */,
+				D20B44812AE6BBF800BE23CB /* ForEachCustomOptionView.swift */,
+				D20B44822AE6BBF800BE23CB /* RoundedBackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D20B44832AE6BBF800BE23CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D20B44842AE6BBF800BE23CB /* UIApplication+Extensions.swift */,
+				D20B44852AE6BBF800BE23CB /* Animation+Extensions.swift */,
+				D20B44862AE6BBF800BE23CB /* AnyTransition+Extensions.swift */,
+				D20B44872AE6BBF800BE23CB /* View+Extensions.swift */,
+				D20B44882AE6BBF800BE23CB /* CLLocation+Extensions.swift */,
+				D20B44892AE6BBF800BE23CB /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D20B448C2AE6BBF800BE23CB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D20B448D2AE6BBF800BE23CB /* UIConstants.swift */,
+				D20B448E2AE6BBF800BE23CB /* ApiKeys.swift */,
+				D20B448F2AE6BBF800BE23CB /* AppConstants.swift */,
+				D20B44902AE6BBF800BE23CB /* CodableKeys.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		D2361CD72A8B803B00D5E11B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D2E3E3432A79498800688BE4 /* AppConstants.swift */,
-				D2361CD82A8B805500D5E11B /* CodableKeys.swift */,
-				D2361CDA2A8B806F00D5E11B /* UIConstants.swift */,
-				D2EE66992A8FB937003ED60A /* ApiKeys.swift */,
+				D20B448C2AE6BBF800BE23CB /* Constants */,
+				D20B448A2AE6BBF800BE23CB /* DebugLogger.swift */,
+				D20B448B2AE6BBF800BE23CB /* DependencyInjector.swift */,
+				D20B44832AE6BBF800BE23CB /* Extensions */,
+				D20B44772AE6BBF800BE23CB /* Model */,
+				D20B44792AE6BBF800BE23CB /* View */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -178,138 +467,28 @@
 		D2E3E3182A791C7B00688BE4 /* MapPlans */ = {
 			isa = PBXGroup;
 			children = (
-				D2EE669B2A8FB9BE003ED60A /* ApiKeys.plist */,
-				D2E3E35A2A7A8C8200688BE4 /* Extensions */,
-				D2E3E3282A791CF800688BE4 /* Model */,
-				D2E3E3272A791CE200688BE4 /* View */,
-				D2E3E3292A791D0000688BE4 /* ViewModel */,
-				D2E3E3192A791C7B00688BE4 /* MapPlansApp.swift */,
-				D2E3E31D2A791C7C00688BE4 /* Assets.xcassets */,
-				D2E3E31F2A791C7C00688BE4 /* Preview Content */,
+				D20B440D2AE6BB9A00BE23CB /* AppStructure */,
+				D20B44192AE6BBA400BE23CB /* MapModule */,
+				D20B443E2AE6BBB300BE23CB /* NotificationSetupModule */,
+				D20B44302AE6BBB300BE23CB /* PlacePlansModule */,
+				D20B44492AE6BBB300BE23CB /* PlanSetupModule */,
 				D2E3E34B2A7A46FB00688BE4 /* Services */,
 				D2361CD72A8B803B00D5E11B /* Utils */,
 			);
 			path = MapPlans;
 			sourceTree = "<group>";
 		};
-		D2E3E31F2A791C7C00688BE4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E3202A791C7C00688BE4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D2E3E3272A791CE200688BE4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E31B2A791C7B00688BE4 /* ContentView.swift */,
-				D2E3E35F2A7BC1F200688BE4 /* MapViews */,
-				D2E3E3602A7BC22000688BE4 /* Components */,
-				D2E3E3612A7BC22E00688BE4 /* PlanViews */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D2E3E3282A791CF800688BE4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E32E2A791E6000688BE4 /* MapStyleOption.swift */,
-				D2E3E3622A7BC37600688BE4 /* Plan */,
-				D2E3E3632A7BC38100688BE4 /* MapPlace */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D2E3E3292A791D0000688BE4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E3302A791FFC00688BE4 /* MapViewModel.swift */,
-				D22E4C092A86395B00FFB0AD /* PlacePlanViewModels */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		D2E3E34B2A7A46FB00688BE4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D20B44692AE6BBE100BE23CB /* Handlers */,
+				D20B446C2AE6BBE100BE23CB /* Notifications */,
+				D20B44702AE6BBE100BE23CB /* PlacesCacheService.swift */,
 				D2E3E3362A792B7D00688BE4 /* LocationManager.swift */,
 				D2E3E3412A792FD800688BE4 /* RealmService.swift */,
 				D2E3E3452A794A9200688BE4 /* PlacesAPIService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D2E3E35A2A7A8C8200688BE4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E35B2A7A8CA500688BE4 /* ViewExtensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D2E3E35F2A7BC1F200688BE4 /* MapViews */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E32A2A791D1800688BE4 /* MapView.swift */,
-				D2E3E32C2A791D7600688BE4 /* MapKitView.swift */,
-				D2E3E3342A79291400688BE4 /* MapStylePickerView.swift */,
-				D228299C2A8233400099CA2A /* SelectedAnnotationView.swift */,
-			);
-			path = MapViews;
-			sourceTree = "<group>";
-		};
-		D2E3E3602A7BC22000688BE4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E3582A7A8C4500688BE4 /* ImageTextFieldView.swift */,
-				D228299E2A8238690099CA2A /* BaseButtonLabel.swift */,
-				D22E4BFD2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift */,
-				D22E4C052A83CD8100FFB0AD /* ForEachCustomOptionView.swift */,
-				D2361CD52A8B7F4600D5E11B /* CustomDividerView.swift */,
-				D2361CDC2A8B863E00D5E11B /* RoundedBackgroundView.swift */,
-				D2361CDE2A8BB53500D5E11B /* ToolbarBackButtonView.swift */,
-				D2361CE02A8BBF4600D5E11B /* ProgressPlansView.swift */,
-				D2361CE22A8BC41700D5E11B /* RoundedCorner.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		D2E3E3612A7BC22E00688BE4 /* PlanViews */ = {
-			isa = PBXGroup;
-			children = (
-				D22E4C0A2A86397700FFB0AD /* PlacePlanViews */,
-				D22E4C0B2A86399800FFB0AD /* AllPlansView.swift */,
-			);
-			path = PlanViews;
-			sourceTree = "<group>";
-		};
-		D2E3E3622A7BC37600688BE4 /* Plan */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E3382A792B9B00688BE4 /* Plan.swift */,
-				D2E3E33F2A792F4E00688BE4 /* PlanState.swift */,
-			);
-			path = Plan;
-			sourceTree = "<group>";
-		};
-		D2E3E3632A7BC38100688BE4 /* MapPlace */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E3472A7950E600688BE4 /* PlacesResult.swift */,
-				D2E3E3492A79556E00688BE4 /* PlaceAnnotation.swift */,
-			);
-			path = MapPlace;
-			sourceTree = "<group>";
-		};
-		D2E3E36C2A7ED1C400688BE4 /* DropdownSelector */ = {
-			isa = PBXGroup;
-			children = (
-				D2E3E36D2A7ED1E000688BE4 /* DropdownSelectorView.swift */,
-				D22E4C012A828FF800FFB0AD /* Dropdown.swift */,
-				D22E4C032A82901600FFB0AD /* DropdownRow.swift */,
-			);
-			path = DropdownSelector;
 			sourceTree = "<group>";
 		};
 		FA285B1382F738612E1A1FFC /* Frameworks */ = {
@@ -384,9 +563,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E3E3212A791C7C00688BE4 /* Preview Assets.xcassets in Resources */,
-				D2E3E31E2A791C7C00688BE4 /* Assets.xcassets in Resources */,
-				D2EE669C2A8FB9BE003ED60A /* ApiKeys.plist in Resources */,
+				D20B44162AE6BB9A00BE23CB /* Preview Assets.xcassets in Resources */,
+				D20B44152AE6BB9A00BE23CB /* Assets.xcassets in Resources */,
+				D20B44172AE6BB9A00BE23CB /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,46 +635,70 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E3E34A2A79556E00688BE4 /* PlaceAnnotation.swift in Sources */,
-				D2E3E32D2A791D7600688BE4 /* MapKitView.swift in Sources */,
-				D2E3E32F2A791E6000688BE4 /* MapStyleOption.swift in Sources */,
-				D2E3E3532A7A80F800688BE4 /* PlansViewModel.swift in Sources */,
-				D22E4C022A828FF800FFB0AD /* Dropdown.swift in Sources */,
-				D2E3E31C2A791C7B00688BE4 /* ContentView.swift in Sources */,
-				D2E3E3402A792F4E00688BE4 /* PlanState.swift in Sources */,
-				D228299F2A8238690099CA2A /* BaseButtonLabel.swift in Sources */,
-				D2E3E3352A79291400688BE4 /* MapStylePickerView.swift in Sources */,
-				D22E4C042A82901600FFB0AD /* DropdownRow.swift in Sources */,
-				D2E3E3392A792B9B00688BE4 /* Plan.swift in Sources */,
-				D2E3E32B2A791D1800688BE4 /* MapView.swift in Sources */,
 				D2E3E3462A794A9200688BE4 /* PlacesAPIService.swift in Sources */,
-				D2E3E35C2A7A8CA500688BE4 /* ViewExtensions.swift in Sources */,
-				D2EE669A2A8FB937003ED60A /* ApiKeys.swift in Sources */,
-				D2E3E3442A79498800688BE4 /* AppConstants.swift in Sources */,
-				D22E4BFE2A827C7400FFB0AD /* PlanStateSwipeButtonView.swift in Sources */,
-				D2E3E34D2A7A473D00688BE4 /* PlanSetupViewModel.swift in Sources */,
-				D2361CDB2A8B806F00D5E11B /* UIConstants.swift in Sources */,
-				D2E3E3572A7A8C2900688BE4 /* PlanSetupView.swift in Sources */,
-				D2361CD62A8B7F4600D5E11B /* CustomDividerView.swift in Sources */,
-				D2361CDF2A8BB53500D5E11B /* ToolbarBackButtonView.swift in Sources */,
+				D20B44A12AE6BBF800BE23CB /* DebugLogger.swift in Sources */,
+				D20B44562AE6BBB300BE23CB /* AllPlansViewModel.swift in Sources */,
+				D20B449B2AE6BBF800BE23CB /* UIApplication+Extensions.swift in Sources */,
+				D20B449A2AE6BBF800BE23CB /* RoundedBackgroundView.swift in Sources */,
+				D20B44672AE6BBB300BE23CB /* DropdownRow.swift in Sources */,
+				D20B44272AE6BBA400BE23CB /* MapViewModel.swift in Sources */,
+				D20B44632AE6BBB300BE23CB /* PlanSetupViewModel.swift in Sources */,
+				D20B44282AE6BBA400BE23CB /* PlaceAnnotation.swift in Sources */,
+				D20B44682AE6BBB300BE23CB /* DropdownSelectorView.swift in Sources */,
+				D20B44A02AE6BBF800BE23CB /* Date+Extensions.swift in Sources */,
+				D20B44542AE6BBB300BE23CB /* PlacePlansViewModel.swift in Sources */,
+				D20B44142AE6BB9A00BE23CB /* MapPlansApp.swift in Sources */,
+				D20B442C2AE6BBA400BE23CB /* MapStylePickerView.swift in Sources */,
+				D20B445E2AE6BBB300BE23CB /* BaseNotification.swift in Sources */,
+				D20B44602AE6BBB300BE23CB /* ScheduleNotification.swift in Sources */,
+				D20B44752AE6BBE100BE23CB /* NotificationService.swift in Sources */,
+				D20B44912AE6BBF800BE23CB /* UICustomOption.swift in Sources */,
+				D20B44532AE6BBB300BE23CB /* PlanRowViewModel.swift in Sources */,
+				D20B44552AE6BBB300BE23CB /* BasePlansViewModel.swift in Sources */,
+				D20B442D2AE6BBA400BE23CB /* SelectedAnnotationView.swift in Sources */,
+				D20B442B2AE6BBA400BE23CB /* Place.swift in Sources */,
+				D20B445B2AE6BBB300BE23CB /* PlacePlansView.swift in Sources */,
+				D20B445D2AE6BBB300BE23CB /* LocationNotification.swift in Sources */,
+				D20B442E2AE6BBA400BE23CB /* MapView.swift in Sources */,
+				D20B44622AE6BBB300BE23CB /* NotificationSettingsView.swift in Sources */,
+				D20B44922AE6BBF800BE23CB /* RoundedCorner.swift in Sources */,
+				D20B44962AE6BBF800BE23CB /* ToolbarBackButtonView.swift in Sources */,
+				D20B44982AE6BBF800BE23CB /* ProgressPlansView.swift in Sources */,
+				D20B44932AE6BBF800BE23CB /* PlanStateSwipeButtonView.swift in Sources */,
+				D20B44972AE6BBF800BE23CB /* CustomDividerView.swift in Sources */,
+				D20B44642AE6BBB300BE23CB /* PlanSetupView.swift in Sources */,
+				D20B44662AE6BBB300BE23CB /* Dropdown.swift in Sources */,
+				D20B44652AE6BBB300BE23CB /* PlanStateView.swift in Sources */,
+				D20B44182AE6BB9A00BE23CB /* ContentView.swift in Sources */,
+				D20B442F2AE6BBA400BE23CB /* MapKitView.swift in Sources */,
+				D20B44292AE6BBA400BE23CB /* PlacesResult.swift in Sources */,
+				D20B449C2AE6BBF800BE23CB /* Animation+Extensions.swift in Sources */,
+				D20B44762AE6BBE100BE23CB /* PlacesCacheService.swift in Sources */,
+				D20B445C2AE6BBB300BE23CB /* NotificationOption.swift in Sources */,
+				D20B449D2AE6BBF800BE23CB /* AnyTransition+Extensions.swift in Sources */,
+				D20B442A2AE6BBA400BE23CB /* MapStyleOption.swift in Sources */,
+				D20B44742AE6BBE100BE23CB /* NotificationInitializer.swift in Sources */,
 				D2E3E3422A792FD800688BE4 /* RealmService.swift in Sources */,
-				D2E3E31A2A791C7B00688BE4 /* MapPlansApp.swift in Sources */,
-				D2361CDD2A8B863E00D5E11B /* RoundedBackgroundView.swift in Sources */,
-				D22E4C002A828C4400FFB0AD /* PlanStateView.swift in Sources */,
-				D2E3E3312A791FFC00688BE4 /* MapViewModel.swift in Sources */,
-				D2E3E36B2A7EC9D600688BE4 /* PlanRowViewModel.swift in Sources */,
-				D2361CD92A8B805500D5E11B /* CodableKeys.swift in Sources */,
+				D20B44952AE6BBF800BE23CB /* BaseButtonLabel.swift in Sources */,
+				D20B44A22AE6BBF800BE23CB /* DependencyInjector.swift in Sources */,
+				D20B44572AE6BBB300BE23CB /* Plan.swift in Sources */,
+				D20B44582AE6BBB300BE23CB /* PlanState.swift in Sources */,
+				D20B44712AE6BBE100BE23CB /* DataHandler.swift in Sources */,
+				D20B44992AE6BBF800BE23CB /* ForEachCustomOptionView.swift in Sources */,
+				D20B44732AE6BBE100BE23CB /* AppState.swift in Sources */,
+				D20B44592AE6BBB300BE23CB /* PlanRowView.swift in Sources */,
+				D20B44A42AE6BBF800BE23CB /* ApiKeys.swift in Sources */,
+				D20B449F2AE6BBF800BE23CB /* CLLocation+Extensions.swift in Sources */,
+				D20B44A62AE6BBF800BE23CB /* CodableKeys.swift in Sources */,
+				D20B44A32AE6BBF800BE23CB /* UIConstants.swift in Sources */,
+				D20B44A52AE6BBF800BE23CB /* AppConstants.swift in Sources */,
+				D20B44942AE6BBF800BE23CB /* ImageTextFieldView.swift in Sources */,
 				D2E3E3372A792B7D00688BE4 /* LocationManager.swift in Sources */,
-				D2E3E3512A7A80DD00688BE4 /* PlacePlansView.swift in Sources */,
-				D2361CE32A8BC41700D5E11B /* RoundedCorner.swift in Sources */,
-				D2E3E36E2A7ED1E100688BE4 /* DropdownSelectorView.swift in Sources */,
-				D2E3E3552A7A86E400688BE4 /* PlanRowView.swift in Sources */,
-				D228299D2A8233400099CA2A /* SelectedAnnotationView.swift in Sources */,
-				D2E3E3592A7A8C4500688BE4 /* ImageTextFieldView.swift in Sources */,
-				D2E3E3482A7950E600688BE4 /* PlacesResult.swift in Sources */,
-				D2361CE12A8BBF4600D5E11B /* ProgressPlansView.swift in Sources */,
-				D22E4C062A83CD8100FFB0AD /* ForEachCustomOptionView.swift in Sources */,
-				D22E4C0C2A86399800FFB0AD /* AllPlansView.swift in Sources */,
+				D20B445A2AE6BBB300BE23CB /* AllPlansView.swift in Sources */,
+				D20B44612AE6BBB300BE23CB /* NotificationType.swift in Sources */,
+				D20B445F2AE6BBB300BE23CB /* NotificationModel.swift in Sources */,
+				D20B449E2AE6BBF800BE23CB /* View+Extensions.swift in Sources */,
+				D20B44722AE6BBE100BE23CB /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

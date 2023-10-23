@@ -8,8 +8,15 @@
 import Foundation
 import RealmSwift
 
-class RealmService {
-    public static var shared = RealmService()
+protocol RealmStorageProtocol {
+    func fetch<T: Object>() ->  Results<T>
+    func addData(_ data: Object)
+    func update(_ data: Object, with updates: [String: Any])
+    func update(action: () -> Void)
+    func remove(_ data: Object)
+}
+
+final class RealmService {
     private var realm: Realm
     
     init() {
@@ -17,45 +24,59 @@ class RealmService {
             let config = Realm.Configuration(schemaVersion: 1)
             Realm.Configuration.defaultConfiguration = config
             realm = try Realm()
+            DebugLogger.shared.printLog(realm.configuration.fileURL?.path ?? "")
         } catch {
-            fatalError(error.localizedDescription)
+            DebugLogger.shared.printLog(error.localizedDescription)
+            fatalError()
         }
     }
-    
-    func fetchPlans() -> Results<Plan> {
-        return realm.objects(Plan.self)
+}
+
+//MARK: - Storage service protocol implementation
+extension RealmService: RealmStorageProtocol {
+    func fetch<T: Object>() -> Results<T> {
+        return realm.objects(T.self)
     }
     
-    func addPlan(_ plan: Plan) {
+    func addData(_ data: Object) {
         do {
-            try realm.write{
-                realm.add(plan)
+            try realm.write {
+                realm.add(data)
             }
         } catch {
-            print(error.localizedDescription)
+            DebugLogger.shared.printLog(error.localizedDescription)
         }
     }
     
-    func updatePlan(_ plan: Plan, with updates: [String: Any]){
+    func update(action: () -> Void) {
+        do {
+            try realm.write {
+                action()
+            }
+        } catch {
+            DebugLogger.shared.printLog(error.localizedDescription)
+        }
+    }
+    
+    func update(_ data: Object, with updates: [String: Any]) {
         do {
             try realm.write {
                 for (key, value) in updates {
-                    plan[key] = value
+                    data[key] = value
                 }
             }
         } catch {
-            print(error.localizedDescription)
+            DebugLogger.shared.printLog(error.localizedDescription)
         }
     }
     
-    func removePlan(_ plan: Plan) {
+    func remove(_ data: Object) {
         do {
             try realm.write {
-                realm.delete(plan)
+                realm.delete(data)
             }
         } catch {
-            print(error.localizedDescription)
+            DebugLogger.shared.printLog(error.localizedDescription)
         }
     }
-    
 }

@@ -7,18 +7,21 @@
 
 import Foundation
 import CoreLocation
-import Combine
 
-class PlacesAPIService {
-    static var shared = PlacesAPIService()
-    
-    func fetchPlaces(with url: URL) -> AnyPublisher<[SearchResult], Never> {
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map{$0.data}
-            .decode(type: PlacesResult.self, decoder: JSONDecoder())
-            .map{$0.results}
-            .replaceError(with: [])
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+typealias NetworkDownloadService = DataHandler & NetworkHandler
+
+protocol PlacesNetworkServiceProtocol: NetworkDownloadService {
+    func fetchPlaces(with url: URL?) async throws -> [SearchResult]
+}
+
+final class PlacesAPIService: PlacesNetworkServiceProtocol {
+    func fetchPlaces(with url: URL?) async throws -> [SearchResult] {
+        guard let url = url else { throw NetworkError.invalidLink }
+        
+        DebugLogger.shared.printLog("\(url)")
+        let (data, response) = try await URLSession.shared.data(from: url)
+        try tryCheckResponse(response: response)
+        let decodeData: PlacesResult = try decodeData(data: data)
+        return decodeData.results
     }
 }

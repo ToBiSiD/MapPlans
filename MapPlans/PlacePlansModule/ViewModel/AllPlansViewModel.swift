@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AllPlansViewModel: BasePlansViewModel {
+final class AllPlansViewModel: BasePlansViewModel {
     override func onUpdatePlans(_ plans: [Plan]) {
         self.plans = plans
     }

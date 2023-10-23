@@ -23,7 +23,7 @@ class PlanSetupViewModel: ObservableObject {
         let createdPlan = Plan(title: title,createDate: Date(), finishDate: finishDate,planDescription: planDescription, planState: planState.rawValue)
         self.plan = createdPlan
         setupNotificationData(notifications: createNotificationData(notifyAt: notifyAt, notifyRadius: notifyRadius, placeId: placeId ?? AppConstants.unknownPlaceId))
-    
+        
         if let placeId = placeId {
             placesCacheService.addPlan(createdPlan, for: placeId)
         }
@@ -59,12 +59,9 @@ class PlanSetupViewModel: ObservableObject {
         }
     }
     
-    private func setupNotificationData(notifications: [BaseNotification]?, removePrevNotifications: Bool = true) {
+    private func setupNotificationData(notifications: [BaseNotification]?) {
         if let notifications = notifications, let plan = plan {
-            if removePrevNotifications {
-                notificationService.cancelNotifications(ids: plan.notifications.map({ $0.notificationId }))
-            }
-            
+            notificationService.cancelNotifications(ids: plan.notifications.map({ $0.notificationId }))
             notificationService.setupNotifications(notifications, for: plan)
         }
     }
@@ -72,7 +69,7 @@ class PlanSetupViewModel: ObservableObject {
     func createNotificationData(notifyAt: Date? = nil, notifyRadius: Int? = nil, placeId: String) -> [BaseNotification]? {
         if let plan = plan {
             var notifications: [BaseNotification] = []
-            if let notifyAt = notifyAt {
+            if let notifyAt = notifyAt, notifyAt > plan.createDate ?? Date() {
                 notifications.append(ScheduleNotification(plan: plan, placeId: placeId, notificationDate: notifyAt))
             }
             

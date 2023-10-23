@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+final class AppState: ObservableObject {
+    static var shared = AppState()
+    @Published var planId : String?
+    @Published var placeId: String?
+}

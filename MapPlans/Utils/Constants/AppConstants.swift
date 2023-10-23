@@ -8,6 +8,13 @@
 import Foundation
 
 struct AppConstants {
+    struct APIConstants {
+        static let apiLink: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        static let locationKey: String = "location"
+        static let key: String = "key"
+        static let radius: String = "radius"
+    }
+    
     static let searchRadius: Double = 300.0
     static let placeTypeExceptions: [String] = ["transit_station"]
     static let unknownPlaceId: String = "unknownPlaceId"

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class AllPlansViewModel: BasePlansViewModel {
+    override func onUpdatePlans(_ plans: [Plan]) {
+        self.plans = plans
+    }
+    
+    func removePlan(_ plan: Plan) {
+        removePlanFromCache(plan: plan, for: plan.placeId ?? AppConstants.unknownPlaceId)
+    }
+}

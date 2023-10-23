@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllPlansView: View {
-    @ObservedObject var viewModel: PlansViewModel = PlansViewModel()
+    @ObservedObject var viewModel = AllPlansViewModel()
     
     var body: some View {
         VStack(spacing: 0)  {
@@ -18,9 +18,10 @@ struct AllPlansView: View {
                     .fontWeight(.heavy)
                 Spacer()
                 
-                Text(viewModel.getInfo())
-                    .font(.headline)
-                    .fontWeight(.heavy)
+                if let progressText = viewModel.progressText {
+                    Text(progressText)
+                        .font(.headline)
+                    .fontWeight(.heavy) }
             }
             .foregroundColor(ColorConstants.textColor)
             .frame(maxHeight: 100)
@@ -33,7 +34,6 @@ struct AllPlansView: View {
                     ForEach(plans) { plan in
                         PlanRowView(plan: plan)
                             .listRowBackground(ColorConstants.backgroundColor)
-                            .animation(.ripple(plans.firstIndex(of: plan) ?? 0))
                     }
                 }
             }

@@ -39,7 +39,7 @@ private extension NotificationInitializer {
     }
 }
 
-//MARK: - NotificationServiceHandlerProtocol implementation
+//MARK: - NotificationInitializerProtocol implementation
 extension NotificationInitializer: NotificationInitializerProtocol {
     func addNotificationCategory(_ category: UNNotificationCategory) {
         notificationCenter.setNotificationCategories([category])

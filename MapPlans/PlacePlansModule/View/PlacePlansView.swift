@@ -9,12 +9,12 @@ import SwiftUI
 import CoreLocation
 
 struct PlacePlansView: View {
-    @ObservedObject var viewModel: PlansViewModel
+    @ObservedObject var viewModel: PlacePlansViewModel
     
     private let placeTitle: String
     
     init(placeId: String, placeTitle: String) {
-        self.viewModel = PlansViewModel(placeId: placeId)
+        self.viewModel = PlacePlansViewModel(placeId: placeId)
         self.placeTitle = placeTitle
     }
     
@@ -35,7 +35,7 @@ struct PlacePlansView: View {
             .padding(.horizontal)
             
             HStack {
-                Text("Completed plans: \(viewModel.getInfo())")
+                Text("Completed plans: \(viewModel.progressText ?? "0")")
                     .foregroundColor(ColorConstants.textColor)
                     .font(.headline)
                     .fontWeight(.heavy)
@@ -52,7 +52,6 @@ struct PlacePlansView: View {
                     ForEach(plans) { plan in
                         PlanRowView(plan: plan)
                             .listRowBackground(ColorConstants.backgroundColor)
-                            .animation(.ripple(plans.firstIndex(of: plan) ?? 0))
                     }
                 }
             }
@@ -73,9 +72,7 @@ struct PlacePlansView: View {
             
             ToolbarItem(placement: .bottomBar) {
                 NavigationLink {
-                    if let placeId = viewModel.placeId{
-                        PlanSetupView(placeId: placeId)
-                    }
+                    PlanSetupView(placeId: viewModel.placeId)
                 } label: {
                     ZStack {
                         Circle()

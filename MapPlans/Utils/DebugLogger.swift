@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+final class DebugLogger {
+    static let shared = DebugLogger()
+    
+    func printLog(_ text: String) {
+        print(text)
+    }
+}
+

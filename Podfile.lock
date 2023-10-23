@@ -1,0 +1,26 @@
+PODS:
+  - GooglePlaces (8.0.0)
+  - Realm (10.41.0):
+    - Realm/Headers (= 10.41.0)
+  - Realm/Headers (10.41.0)
+  - RealmSwift (10.41.0):
+    - Realm (= 10.41.0)
+
+DEPENDENCIES:
+  - GooglePlaces (= 8.0.0)
+  - RealmSwift (~> 10)
+
+SPEC REPOS:
+  trunk:
+    - GooglePlaces
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  GooglePlaces: 46231f49e2dc52aa9a604f99e2e6b29996f30cc7
+  Realm: 669efee7dc1ce0aa9f6739a60f8c0df0a3835067
+  RealmSwift: 6b7b0e91b79dc66d5cfceeb3b319cacfc9b1a70e
+
+PODFILE CHECKSUM: d746a07a367dbf4c1988da51b48404525c4bd4a4
+
+COCOAPODS: 1.12.1

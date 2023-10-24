@@ -40,4 +40,8 @@ extension NotificationModel {
     var planId: String? {
         plan.first?.planId
     }
+    
+    var getSubInfo: String {
+        subInfo
+    }
 }

@@ -9,46 +9,78 @@ import Foundation
 import CoreLocation
 
 class PlanSetupViewModel: ObservableObject {
+    @Published var planTitle: String = ""
+    @Published var planDescription: String = ""
+    @Published var planState: PlanState = .toDo
+    @Published var finishDate: Date = Date()
+    
+    @Published var notifyDate: Date = Date().dayBefore
+    @Published var locationRadius: Int = 0
+    
     @Published var plan: Plan? = nil
     @Inject private var placesCacheService: PlacesCacheServiceProtocol
     @Inject private var realmService: RealmStorageProtocol
     @Inject private var notificationService: NotificationServiceProtocol
     
-    init(plan: Plan? = nil) {
+    private var placeId: String
+    
+    init(plan: Plan? = nil, placeId: String) {
         self.plan = plan
+        self.placeId = placeId
+        setupPublishedParametrs()
     }
     
-    func addPlan(title: String, finishDate: Date? = nil, placeId: String? = nil, planDescription : String? = nil, planState: PlanState = .toDo, placeCoordinate: CLLocationCoordinate2D, notifyAt: Date? = nil, notifyRadius: Int? = nil) {
-        
-        let createdPlan = Plan(title: title,createDate: Date(), finishDate: finishDate,planDescription: planDescription, planState: planState.rawValue)
-        self.plan = createdPlan
-        setupNotificationData(notifications: createNotificationData(notifyAt: notifyAt, notifyRadius: notifyRadius, placeId: placeId ?? AppConstants.unknownPlaceId))
-        
-        if let placeId = placeId {
-            placesCacheService.addPlan(createdPlan, for: placeId)
+    private func setupPublishedParametrs() {
+        if let plan = self.plan {
+            planTitle = plan.title
+            planDescription = plan.planDescription ?? ""
+            planState = plan.planState
+            finishDate = plan.finishDate ?? Date()
+            
+            for notification in plan.notifications {
+                switch notification.notificationType {
+                case .schedule:
+                    if let date = notification.getSubInfo.date{
+                        finishDate = date
+                    }
+                    break
+                case .location:
+                    if let radius = Int(notification.getSubInfo) {
+                        locationRadius = radius
+                    }
+                    break
+                }
+            }
         }
     }
     
-    func updatePlan(title: String, finishDate: Date? = nil, planDescription : String? = nil, planState: PlanState? = nil, notifications: [BaseNotification]? = nil) {
-        
+    func addPlan() {
+        let createdPlan = Plan(title: planTitle, createDate: Date(), finishDate: finishDate, planDescription: planDescription, planState: planState.rawValue)
+        self.plan = createdPlan
+        setupNotificationData(notifications: createNotificationData(notifyAt: notifyDate, notifyRadius: locationRadius, placeId: placeId))
+        placesCacheService.addPlan(createdPlan, for: placeId)
+    }
+    
+    func updatePlan() {
         if let plan = plan {
             realmService.update {
-                if !title.isEmpty {
-                    plan.title = title
+                if !planTitle.isEmpty && planTitle != plan.title {
+                    plan.title = planTitle
                 }
                 
-                if let finishDate = finishDate {
+                if finishDate != plan.finishDate && finishDate >= Date() {
                     plan.finishDate = finishDate
                 }
                 
-                if let description = planDescription, !description.isEmpty {
-                    plan.planDescription = description
+                if let description = plan.planDescription, !planDescription.isEmpty && description != planDescription {
+                    plan.planDescription = planDescription
                 }
                 
-                if let planState = planState {
+                if planState != plan.planState {
                     plan.planState = planState
                 }
-                setupNotificationData(notifications: notifications)
+                
+                setupNotificationData(notifications: createNotificationData(notifyAt: notifyDate, notifyRadius: locationRadius, placeId: placeId))
             }
         }
     }
@@ -66,7 +98,7 @@ class PlanSetupViewModel: ObservableObject {
         }
     }
     
-    func createNotificationData(notifyAt: Date? = nil, notifyRadius: Int? = nil, placeId: String) -> [BaseNotification]? {
+    private func createNotificationData(notifyAt: Date? = nil, notifyRadius: Int? = nil, placeId: String) -> [BaseNotification]? {
         if let plan = plan {
             var notifications: [BaseNotification] = []
             if let notifyAt = notifyAt, notifyAt > plan.createDate ?? Date() {

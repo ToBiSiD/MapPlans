@@ -11,42 +11,12 @@ import CoreLocation
 struct PlanSetupView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject private var viewModel: PlanSetupViewModel
-    
-    @State var planTitle: String = ""
-    @State var description: String = ""
-    @State var planState: PlanState = .toDo
-    @State var finishDate: Date = Date()
-    
-    @State var showNotifySettigns: Bool = false
-    @State var notifyDate: Date = Date().dayBefore
-    @State var locationRadius: Int = 0
-    
-    private var placeId: String = ""
+    @State private var showNotifySettigns: Bool = false
+
     private var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     init(placeId: String, plan: Plan? = nil) {
-        self.placeId = placeId
-        self.viewModel = PlanSetupViewModel(plan: plan)
-        
-        if let plan = viewModel.plan {
-            self.planTitle = plan.title
-            self.planState = plan.planState
-            if let description = plan.planDescription {
-                self.description = description
-            }
-            
-            if let finish = plan.finishDate {
-                self.finishDate = finish
-            }
-            
-            /*if let notifyDate = plan.notifyDate {
-                self.notifyDate = notifyDate
-            }
-            
-            if let notifyRadius = plan.notifyRadius {
-                self.locationRadius = notifyRadius
-            }*/
-        }
+        self.viewModel = PlanSetupViewModel(plan: plan, placeId: placeId)
     }
     
     var body: some View {
@@ -55,11 +25,11 @@ struct PlanSetupView: View {
                 .ignoresSafeArea()
             
             VStack {
-                ImageTextFieldView(textValue: $planTitle, isSecurityField: false, placeholderText: planTitle.isEmpty ? "Title" : planTitle ,imageName: "pencil")
+                ImageTextFieldView(textValue: $viewModel.planTitle, isSecurityField: false, placeholderText: viewModel.planTitle.isEmpty ? viewModel.planTitle : "Title", imageName: "pencil")
                 
-                ImageTextFieldView(textValue: $description, isSecurityField: false, placeholderText: description.isEmpty ? "Description" : description ,imageName: "pencil")
+                ImageTextFieldView(textValue: $viewModel.planDescription, isSecurityField: false, placeholderText: viewModel.planDescription.isEmpty ? viewModel.planDescription : "Description", imageName: "pencil")
                 
-                DatePicker("Finish date", selection: $finishDate)
+                DatePicker("Finish date", selection: $viewModel.finishDate)
                     .datePickerStyle(.compact)
                     .padding()
                     .foregroundColor(ColorConstants.textColor)
@@ -74,7 +44,7 @@ struct PlanSetupView: View {
                     
                     if let options = PlanState.allCases as? [PlanState] {
                         DropdownSelectorView(defaultOption: viewModel.plan?.planState ?? .toDo, options: options, buttonHeight: 40) { option in
-                            planState = option
+                            viewModel.planState = option
                         }
                     }
                 }
@@ -93,7 +63,7 @@ struct PlanSetupView: View {
                     Spacer()
                 }
                 if showNotifySettigns {
-                    NotificationSettingsView(notifyDate: $notifyDate, locationRadius: $locationRadius)
+                    NotificationSettingsView(notifyDate: $viewModel.notifyDate, locationRadius: $viewModel.locationRadius)
                 }
                 
                 Button {
@@ -118,9 +88,9 @@ struct PlanSetupView: View {
     
     private func finishSetup() {
         if viewModel.plan != nil {
-            viewModel.updatePlan(title: planTitle, finishDate: finishDate, planDescription: description, planState: planState, notifications: viewModel.createNotificationData(notifyAt: notifyDate, notifyRadius: locationRadius, placeId: placeId))
+            viewModel.updatePlan()
         } else {
-            viewModel.addPlan(title: planTitle, finishDate: finishDate, placeId: placeId, planDescription: description, planState: planState, placeCoordinate: coordinate, notifyAt: notifyDate, notifyRadius: locationRadius)
+            viewModel.addPlan()
         }
     }
 }
